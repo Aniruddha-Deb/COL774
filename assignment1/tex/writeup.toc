@@ -1,0 +1,4 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Recap}{1}{section.1}%
+\contentsline {section}{\numberline {2}Definitions}{1}{section.2}%
+\contentsline {section}{\numberline {3}Content}{1}{section.3}%
