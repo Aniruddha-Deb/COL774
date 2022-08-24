@@ -1438,6 +1438,7 @@ def convertNotebook(notebookPath, out_file):
     exporter = PythonExporter()
     source, meta = exporter.from_notebook_node(nb)
     comment_regex = re.compile(r"# In\[[0-9]+\]")
+    stop_regex = re.compile(r"# \[StopConvert\]")
 
     source = source.split('\n')
 
@@ -1447,6 +1448,8 @@ def convertNotebook(notebookPath, out_file):
             if (comment_regex.match(line)):
                 next(source_iter)
                 next(source_iter)
+            elif (stop_regex.match(line)):
+                break
             else:
                 out_file.write(line)
                 out_file.write('\n')
