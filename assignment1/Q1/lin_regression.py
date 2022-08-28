@@ -3,6 +3,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 
 #########################################
@@ -12,57 +13,77 @@ import matplotlib.pyplot as plt
 def normalize(a):
     return (a-a.mean())/a.std()
 
-def h(x, theta_0, theta_1):
-    return theta_0 + theta_1*x
+def h(X, theta):
+    return X@theta
 
-def J(x, y, theta_0, theta_1):
-    return ((y-theta_0-theta_1*x)**2).mean()/2
+def J(X, Y, theta):
+    return ((Y-X@theta)**2).mean()/2
 
-def grad_J(x, y, theta_0, theta_1):
-    return (-(y-theta_0-theta_1*x).mean(),(-x*(y-theta_0-theta_1*x)).mean())
+def grad_J(X, Y, theta):
+    return X.T@(X@theta - Y)/len(Y)
 
-def gradient_descent(x, y, theta_0, theta_1, eta=0.001, stop_lim=0.0001, t_lim=10000):
+def gradient_descent(X, Y, theta, eta=0.01, stop_lim=0.0001, t_lim=10000):
     
-    theta_0_pts = [theta_0]
-    theta_1_pts = [theta_1]
+    theta_pts = [theta]
     
     t = 0
     
     while t < t_lim:
-        loss_grad = grad_J(x, y, theta_0_pts[-1], theta_1_pts[-1])
-        theta_0_n = theta_0_pts[-1] - eta*loss_grad[0]
-        theta_1_n = theta_1_pts[-1] - eta*loss_grad[1]
+        loss_grad = grad_J(X,Y,theta_pts[-1])
+        theta_n = theta_pts[-1] - eta*loss_grad
         
-        if (abs(theta_0_n-theta_0_pts[-1]) < stop_lim and abs(theta_1_n-theta_1_pts[-1]) < stop_lim):
+        if (abs(theta_n - theta_pts[-1]).max() < stop_lim):
             break
         
-        theta_0_pts.append(theta_0_n)
-        theta_1_pts.append(theta_1_n)
+        theta_pts.append(theta_n)
         
         t += 1
             
-    print(f"Learning Rate: {eta}")
-    print("Stopping criteria: ")
-    print(f"    |theta_0^(t+1) - theta_0^(t)| < {stop_lim}")
-    print(f"    |theta_1^(t+1) - theta_1^(t)| < {stop_lim}")
-    print(f"Final parameters: ({theta_0_pts[-1]},{theta_1_pts[-1]})")
+    return theta_pts
+
+class NormalizedLinearRegressor:
     
-    return (theta_0_pts, theta_1_pts)
+    def __init__(self,theta=np.array([[0],[0]])):
+        self.theta = theta
+        
+    def fit(self,x,y,**kwargs):
+        self.mean_x = x.mean()
+        self.std_x = x.std()
+        self.mean_y = y.mean()
+        self.std_y = y.std()
+        self.m = len(y)
+        
+        X = np.column_stack([np.full(self.m,1),normalize(x)])
+        Y = normalize(y).reshape(-1,1)
+        
+        self.theta = gradient_descent(X,Y,self.theta,**kwargs)[-1]
+    
+    def predict(self,x):
+        
+        X = np.column_stack([np.full(self.m,1),(x-self.mean_x)/self.std_x])
+        Y = X@self.theta
+        
+        return (Y.flatten()*self.std_y) + self.mean_y
 
 
 #########################################
 # part (b)
 #########################################
 
-def plot_data(x, y, theta_0, theta_1, save_file_name=None):
+def get_2d_coords(X, Y, theta):
+    return (np.squeeze(X.T[1]),np.squeeze(Y),np.squeeze(theta))
+
+def plot_data(X, Y, theta, save_file_name=None):
     fig = plt.figure(dpi=150,figsize=(5,3))
     ax = fig.add_axes([0,0,1,1])
+    
+    x,y,t = get_2d_coords(X,Y,theta)
     
     ax.set_title("Plot of normalized density vs acidity")
     ax.scatter(x,y,marker='.')
     ax.set_xlabel("acidity")
     ax.set_ylabel("density")
-    ax.axline((0, theta_0), slope=theta_1, color='red', label='regression fit')
+    ax.axline((0, t[0]), slope=t[1], color='red', label='regression fit')
     ax.legend()
     
     if (save_file_name):
@@ -75,24 +96,35 @@ def plot_data(x, y, theta_0, theta_1, save_file_name=None):
 # part (c)
 #########################################
 
-def plot_mesh(x, y, theta_0, theta_1, save_file_name=None):
+def generate_loss_space(X,Y,t0_range,t1_range,t0_num,t1_num):
+    t0_space = np.linspace(t0_range[0],t0_range[1],t0_num)
+    t1_space = np.linspace(t1_range[0],t1_range[1],t1_num)
+    t_meshgrid = np.meshgrid(t0_space, t1_space)
+    t_space  = np.stack(t_meshgrid, axis=2).reshape((t0_num,t1_num,2,1))
 
-    theta_0_space = np.linspace(-2,2,65)
-    theta_1_space = np.linspace(-2,2,65)
-    theta_space   = np.meshgrid(theta_0_space, theta_1_space)
+    vector_loss = np.vectorize(J, signature='(m,2),(m,1),(2,1)->()')
+    loss_space = vector_loss(X, Y, t_space)
 
-    vector_loss = np.vectorize(J, signature='(m),(m),(),()->()')
-    loss_space = vector_loss(x, y, theta_space[0], theta_space[1])
+    return (t_meshgrid[0], t_meshgrid[1], loss_space)
 
+def plot_mesh(X, Y, descent_path, elev=60, azim=45, save_file_name=None, alpha=0.5):
+
+    vector_loss = np.vectorize(J, signature='(m,2),(m,1),(2,1)->()')
+    (t0_space, t1_space, loss_space) = generate_loss_space(X,Y,(-2,2),(-2,2),25,25)
+    
     fig = plt.figure(figsize=(5,5), dpi=150)
     ax = fig.add_axes([0,0,1,1], projection='3d')
-    ax.view_init(elev=60, azim=45)
-    surf = ax.plot_surface(theta_space[0], theta_space[1], loss_space, cmap='viridis', edgecolor='black')
+    ax.view_init(elev=elev, azim=azim)
+    surf = ax.plot_surface(t0_space, t1_space, loss_space, cmap='viridis', edgecolor=None, alpha=alpha)
     #surf.set_facecolor((0,0,0,0))
-    #ax.contour3D(theta_space[0], theta_space[1], loss_space, 50, cmap='binary')
     ax.set_xlabel('theta_0')
     ax.set_ylabel('theta_1')
     ax.set_zlabel('loss')
+    
+    desc_x, desc_y = np.stack(descent_path,axis=0).reshape((len(descent_path),2)).T
+    desc_vals = vector_loss(X,Y,np.array(descent_path))
+
+    ax.plot(desc_x, desc_y, desc_vals, marker='.',color='r')
         
     if (save_file_name):
         fig.savefig(f'plots/{save_file_name}.png', bbox_inches = 'tight')
@@ -104,33 +136,42 @@ def plot_mesh(x, y, theta_0, theta_1, save_file_name=None):
 # part (d)
 #########################################
 
-def plot_contour(x, y, theta_0, theta_1, save_file_name=None):
+def plot_contour(x, y, descent_path, save_file_name=None):
 
-    theta_0_space = np.linspace(-2,2,65)
-    theta_1_space = np.linspace(-2,2,65)
-    theta_space   = np.meshgrid(theta_0_space, theta_1_space)
-
-    vector_loss = np.vectorize(J, signature='(m),(m),(),()->()')
-    loss_space = vector_loss(x, y, theta_space[0], theta_space[1])
+    (t0_space, t1_space, loss_space) = generate_loss_space(X,Y,(-2,2),(-2,2),25,25)
 
     fig = plt.figure(figsize=(3,3), dpi=150)
     ax = fig.add_axes([0,0,1,1])
-    CS = plt.contour(theta_0_space, theta_1_space, loss_space)
+    CS = plt.contour(t0_space, t1_space, loss_space)
     ax.set_xlabel('theta_0')
     ax.set_ylabel('theta_1')
     
     #plt.clabel(CS, fmt = '%2.1d', colors = 'k', fontsize=14) #contour line labels
-        
+
+    desc_x, desc_y = np.stack(descent_path,axis=0).reshape((len(descent_path),2)).T
+    
+    ax.plot(desc_x, desc_y, marker='.',color='r')
+
+    
     if (save_file_name):
         fig.savefig(f'plots/{save_file_name}.png', bbox_inches = 'tight')
         
     # return fig
 
 
-#
-# Questions:
-# 
-# 1. "Plotting at each iteration" - What does this mean?
-# 2. "Time gap of 0.2 seconds" - do we print the values / do we have to make an animation / what do we need to do?
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("ERROR: this script requires a train and test directory. Exiting.")
+    
+    input_dir, output_dir = sys.argv[1],sys.argv[2]
+    trainX = np.loadtxt(f"{input_dir}/X.csv")
+    trainY = np.loadtxt(f"{input_dir}/Y.csv")
+    testX = np.loadtxt(f"{input_dir}/X.csv")
+    
+    regressor = NormalizedLinearRegressor()
+    regressor.fit(trainX,trainY)
+    preds = regressor.predict(testX)
+    print(preds.shape)
+    np.savetxt("result_1.txt",preds)
 
 
