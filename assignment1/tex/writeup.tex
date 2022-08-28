@@ -1,145 +1,82 @@
-\documentclass[a4paper]{article}
-\usepackage[english]{babel}
-\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-% \usepackage{amsthm}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{import}
-\usepackage{pdfpages}
-\usepackage{transparent}
-\usepackage{xcolor}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
-
-\usepackage{thmtools}
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage[table,usenames,dvipsnames]{xcolor}
+\usepackage{array}
+\usepackage{varwidth}
+\usepackage{tabularx}
+\usepackage{hyperref}
 \usepackage{enumitem}
-\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\renewcommand*\familydefault{\sfdefault}
 
-\usepackage{xpatch}
-
-\usepackage{boites}
-\makeatletter
-\xpatchcmd{\endmdframed}
-{\aftergroup\endmdf@trivlist\color@endgroup}
-{\endmdf@trivlist\color@endgroup\@doendpe}
-{}{}
-\makeatother
-
-%\usepackage[poster]{tcolorbox}
-%\allowdisplaybreaks
-%\sloppy
-
-\usepackage[many]{tcolorbox}
-
-\xpatchcmd{\proof}{\itshape}{\bfseries\itshape}{}{}
-
-% to set box separation
-\setlength{\fboxsep}{0.8em}
-\def\breakboxskip{7pt}
-\def\breakboxparindent{0em}
-
-\newenvironment{proof}{\begin{breakbox}\textit{Proof.}}{\hfill$\square$\end{breakbox}}
-\newenvironment{ans}{\begin{breakbox}\textit{Answer.}}{\end{breakbox}}
-\newenvironment{soln}{\begin{breakbox}\textit{Solution.}}{\end{breakbox}}
-
-% \tcolorboxenvironment{proof}{
-%     blanker,
-%     before skip=\topsep,
-%     after skip=\topsep,
-%     borderline={0.4pt}{0.4pt}{black},
-%     breakable,
-%     left=12pt,
-%     right=12pt,
-%     top=12pt,
-%     bottom=12pt,
-% }
-% 
-% \tcolorboxenvironment{ans}{
-%     blanker,
-%     before skip=\topsep,
-%     after skip=\topsep,
-%     borderline={0.4pt}{0.4pt}{black},
-%     breakable,
-%     left=12pt,
-%     right=12pt,
-% }
-
-\mdfdefinestyle{enclosed}{
-    linecolor=black
-    ,backgroundcolor=none
-    ,apptotikzsetting={\tikzset{mdfbackground/.append style={fill=gray!100,fill opacity=.3}}}
-    ,frametitlefont=\sffamily\bfseries\color{black}
-    ,splittopskip=.5cm
-    ,frametitlebelowskip=.0cm
-    ,topline=true
-    ,bottomline=true
-    ,rightline=true
-    ,leftline=true
-    ,leftmargin=0.01cm
-    ,linewidth=0.02cm
-    ,skipabove=0.01cm
-    ,innerbottommargin=0.1cm
-    ,skipbelow=0.1cm
+\newtcolorbox{mybox}[3][]
+{
+  colframe = #2!25,
+  colback  = #2!10,
+  coltitle = #2!20!black,  
+  title    = {#3},
+  #1,
 }
 
-\mdfsetup{%
-    middlelinecolor=black,
-    middlelinewidth=1pt,
-roundcorner=4pt}
-
-\setlength{\parindent}{0pt}
-
-\mdtheorem[style=enclosed]{theorem}{Theorem}
-\mdtheorem[style=enclosed]{lemma}{Lemma}[theorem]
-\mdtheorem[style=enclosed]{claim}{Claim}[theorem]
-\mdtheorem[style=enclosed]{ques}{Question}
-\mdtheorem[style=enclosed]{defn}{Definition}
-\mdtheorem[style=enclosed]{notn}{Notation}
-\mdtheorem[style=enclosed]{obs}{Observation}
-\mdtheorem[style=enclosed]{eg}{Example}
-\mdtheorem[style=enclosed]{cor}{Corollary}
-\mdtheorem[style=enclosed]{note}{Note}
-
-% \let\thetheorem=\relax
-% \let\thelemma=\relax
-% \let\theclaim=\relax
-% \let\theques=\relax
-% \let\thedefn=\relax
-% \let\thenotn=\relax
-% \let\theobs=\relax
-% \let\thecor=\relax
-% \let\thenote=\relax
-
-% \renewcommand\qedsymbol{$\blacksquare$}
-\newcommand{\nl}{\vspace{0.2cm}\\}
-\newcommand{\mc}{\mathcal}
-\newcommand{\mi}{\mathit}
-\newcommand{\mf}{\mathbf}
-\newcommand{\mb}{\mathbb}
-\renewcommand{\L}{\mc{L}}
-\newcommand{\hd}{\hat{\delta}}
-
-\newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{./figures/}{#1.pdf_tex}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
 }
-\pdfsuppresswarningpagegroup=1
 
-\title{\textbf{COL352 Lecture 8}}
-\date{}
+\title{\textbf{COL774 Assignment 1}}
+\author{Aniruddha Deb \\ \texttt{2020CS10869}}
+\date{September 2022}
 
 \begin{document}
+
 \maketitle
-\tableofcontents
 
-\section{Recap}
+\section*{Linear Regression}
 
-\section{Definitions}
+\begin{enumerate}[label=(\alph*)]
+    \item The parameters we used were:
+    \begin{itemize}
+        \item Learning rate $\eta = 0.01$
+        \item Convergence limit $\epsilon = 0.0001$
+        \item Final set of parameters: $(\theta_0,\theta_1) = (0.00561383,0.6451277)$
+    \end{itemize}
 
-\section{Content}
+    \item \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/b_plot.png}}
+
+    \item \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/c_mesh.png}}
+
+    \item \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/d_contour.png}}
+
+    \item
+    \begin{tabular}{c c c}
+        $\eta = 0.001$ & $\eta = 0.025$ & $\eta = 0.1$ \\
+        \includegraphics[width=0.3\textwidth]{../Q1/plots/e_contour_001.png} &
+        \includegraphics[width=0.3\textwidth]{../Q1/plots/e_contour_025.png} &
+        \includegraphics[width=0.3\textwidth]{../Q1/plots/e_contour_1.png} \\
+    \end{tabular}
+
+    We notice that with a smaller step size, fewer steps are required to reach convergence; this is beneficial in this case, but can also lead to gradient descent overshooting/not converging in some cases.
+
+\end{enumerate}
+
+\clearpage
+
+\section*{Stochastic Gradient Descent}
+
+\begin{enumerate}
+    \addtocounter{enumi}{1}
+    \item 
+\end{enumerate}
+
+\section*{Logistic Regression}
+
+\section*{Gaussian Discriminant Analysis}
 
 \end{document}
