@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.15)  28 AUG 2022 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.15)  29 AUG 2022 20:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -659,64 +659,87 @@ Package pdftex.def Info: ../Q1/plots/c_mesh.png  used on input line 53.
  [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../Q1/p
-lots/b_plot.png>]
-<../Q1/plots/d_contour.png, id=26, 279.9258pt x 265.4718pt>
+lots/b_plot.png>] [2 <../Q1/plots/c_mesh.png>]
+<../Q1/plots/d_contour.png, id=32, 279.9258pt x 265.4718pt>
 File: ../Q1/plots/d_contour.png Graphic file (type png)
 <use ../Q1/plots/d_contour.png>
-Package pdftex.def Info: ../Q1/plots/d_contour.png  used on input line 55.
+Package pdftex.def Info: ../Q1/plots/d_contour.png  used on input line 57.
 (pdftex.def)             Requested size: 342.37051pt x 324.71362pt.
-<../Q1/plots/e_contour_001.png, id=27, 279.9258pt x 265.4718pt>
+<../Q1/plots/e_contour_001.png, id=33, 279.9258pt x 265.4718pt>
 File: ../Q1/plots/e_contour_001.png Graphic file (type png)
 <use ../Q1/plots/e_contour_001.png>
-Package pdftex.def Info: ../Q1/plots/e_contour_001.png  used on input line 60.
+Package pdftex.def Info: ../Q1/plots/e_contour_001.png  used on input line 63.
 (pdftex.def)             Requested size: 146.73235pt x 139.15604pt.
-<../Q1/plots/e_contour_025.png, id=28, 279.9258pt x 265.4718pt>
+<../Q1/plots/e_contour_025.png, id=34, 279.9258pt x 265.4718pt>
 File: ../Q1/plots/e_contour_025.png Graphic file (type png)
 <use ../Q1/plots/e_contour_025.png>
-Package pdftex.def Info: ../Q1/plots/e_contour_025.png  used on input line 61.
+Package pdftex.def Info: ../Q1/plots/e_contour_025.png  used on input line 64.
 (pdftex.def)             Requested size: 146.73235pt x 139.15604pt.
-<../Q1/plots/e_contour_1.png, id=29, 279.9258pt x 265.4718pt>
+<../Q1/plots/e_contour_1.png, id=35, 279.9258pt x 265.4718pt>
 File: ../Q1/plots/e_contour_1.png Graphic file (type png)
 <use ../Q1/plots/e_contour_1.png>
-Package pdftex.def Info: ../Q1/plots/e_contour_1.png  used on input line 62.
+Package pdftex.def Info: ../Q1/plots/e_contour_1.png  used on input line 65.
 (pdftex.def)             Requested size: 146.73235pt x 139.15604pt.
 
-Overfull \hbox (16.46886pt too wide) in paragraph at lines 58--64
+Overfull \hbox (16.46886pt too wide) in paragraph at lines 61--67
 [][] 
  []
 
-[2 <../Q1/plots/c_mesh.png> <../Q1/plots/d_contour.png>] [3 <../Q1/plots/e_cont
-our_001.png> <../Q1/plots/e_contour_025.png> <../Q1/plots/e_contour_1.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 69.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 69.
+[3
 
-(./writeup.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 69.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 69.
+ <../Q1/plots/d_contour.png> <../Q1/plots/e_contour_001.png> <../Q1/plots/e_con
+tour_025.png> <../Q1/plots/e_contour_1.png>]
+<../Q2/plots/loss.png, id=46, 433.62pt x 289.08pt>
+File: ../Q2/plots/loss.png Graphic file (type png)
+<use ../Q2/plots/loss.png>
+Package pdftex.def Info: ../Q2/plots/loss.png  used on input line 80.
+(pdftex.def)             Requested size: 320.46205pt x 213.65118pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+[4
+
+ <../Q2/plots/loss.png>]
+<../Q2/plots/d_paths.png, id=57, 393.6306pt x 401.8212pt>
+File: ../Q2/plots/d_paths.png Graphic file (type png)
+<use ../Q2/plots/d_paths.png>
+Package pdftex.def Info: ../Q2/plots/d_paths.png  used on input line 133.
+(pdftex.def)             Requested size: 342.37051pt x 349.49577pt.
+ [5 <../Q2/plots/d_paths.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
+ (./writeup.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
 Package rerunfilecheck Info: File `writeup.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 69.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
  ) 
 Here is how much of TeX's memory you used:
- 16281 strings out of 480608
- 308404 string characters out of 5903629
- 561508 words of memory out of 5000000
- 31850 multiletter control sequences out of 15000+600000
+ 16346 strings out of 480608
+ 309796 string characters out of 5903629
+ 566508 words of memory out of 5000000
+ 31904 multiletter control sequences out of 15000+600000
  538313 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,11n,75p,966b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,11n,75p,966b,474s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr
-/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr
-/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/
-local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb>
-Output written on writeup.pdf (3 pages, 481630 bytes).
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/lo
+cal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
+cal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb>
+Output written on writeup.pdf (5 pages, 687645 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

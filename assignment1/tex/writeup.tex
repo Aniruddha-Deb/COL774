@@ -48,13 +48,16 @@
         \item Final set of parameters: $(\theta_0,\theta_1) = (0.00561383,0.6451277)$
     \end{itemize}
 
-    \item \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/b_plot.png}}
+    \item \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/b_plot.png}}\end{center}
 
-    \item \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/c_mesh.png}}
+    \item \begin{center}3D mesh plot of gradient, and the path taken by gradient descent ($\eta = 0.01$): \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/c_mesh.png}}\end{center}
 
-    \item \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/d_contour.png}}
+    \clearpage
 
-    \item
+    \item \begin{center}2D contour plot of gradient, and the path taken by gradient descent ($\eta = 0.01$): \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/d_contour.png}}\end{center}
+
+    \item Paths taken by Gradient Descent for varying values of $\eta$: 
+    
     \begin{tabular}{c c c}
         $\eta = 0.001$ & $\eta = 0.025$ & $\eta = 0.1$ \\
         \includegraphics[width=0.3\textwidth]{../Q1/plots/e_contour_001.png} &
@@ -70,9 +73,67 @@
 
 \section*{Stochastic Gradient Descent}
 
-\begin{enumerate}
+\begin{mybox}{LimeGreen}{On Convergence of SGD}
+From the video shared, it was suggested that to examine the convergence, loss functions averaged over atleast a 1000 examples be plotted during Stochastic Gradient Descent. A plot over different batch sizes gives the following:
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{../Q2/plots/loss.png}
+\end{center}
+
+We see that for $b=10^4$ and $b=10^6$, the algorithm does not converge as the learning rate is too low, and the cutoff condition stops it early. As a result, we also include an absolute loss cutoff for learning: stop when the averaged loss over 1000 examples is less than 1.\\
+
+This example shows how to find such a window, given that we don't know the parameters that SGD will converge to: we manually examine the graphs and see what values our converging loss functions are reaching. The graph for $b=1$ and $b=100$ reaches values marginally under 1 (0.97), hence we choose 1 as our cutoff.
+\end{mybox}
+
+\begin{mybox}{red}{Note}
+We choose to keep the maximum number of epochs at 100, as for $b=10^6$, the slow algorithm was not converging on my machine even after running it for $\approx$5 minutes.
+\end{mybox}
+
+\begin{enumerate}[label=(\alph*)]
     \addtocounter{enumi}{1}
-    \item 
+    \item With the following convergence conditions:
+    \begin{itemize}
+        \item number of epochs $t \le 100$
+        \item relative difference averaged over (atleast) past 1000 examples $\mathcal{J}^{t+1}_{\ge 1000} - \mathcal{J}^{t}_{\ge 1000} < r_d$
+        \item absolute loss function averaged over (atleast) past 1000 examples $\mathcal{J}_{\ge 1000} < 1$
+    \end{itemize}
+
+    We obtain the following convergence(s):
+
+    \begin{center}
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        $b$     & $r_d$ & $\theta$ & Time & Batches \\
+        \hline
+        1       & 0.01  & $(3.03,1.03,2.03)$ & 2.46 s & 88000 \\
+        100     & 0.001 & $(2.72,1.06,1.98)$ & 0.24 s & 8520 \\
+        10000   & 0.001 & $(2.69,1.07,1.98)$ & 10.80 s & 8122 \\
+        1000000 & 0.001 & $(0.25,0.91,0.46)$ & 14.33 s & 100 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    \item All the training examples converge close to the actual parameters, except $b=10^6$, as it hits the epoch limit. $b=100$ converges the fastest. $r_d$ for 1 was taken to be $0.01$ as for $b=1$, we get strong oscillations around the local minima (as will be visible in fig. (d)). Other parameters don't converge exactly to the local minima as their averaged loss functions reach below 1 sooner, and as they move slowly, the second condition of relative difference is also satisfied once they get very close to the minima. 
+
+    For the test dataset with 10,000 examples, the loss values are as follows:
+
+    \begin{center}
+    \begin{tabular}{|l|l|}
+        \hline
+        $b$     & $\mathcal{J}(\theta)$ \\
+        \hline
+        1       & 1.05 \\
+        100     & 1.21 \\
+        10000   & 1.25 \\
+        1000000 & 121.0 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    \item \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q2/plots/d_paths.png}}\end{center}
+
+    Notice that for $b=1$, the algorithm does not converge to the minima, but instead oscillates in a ball around the minima. This is fixed by taking a variable learning rate (as seen in the video). The other movements are slower, and the red line stops early because it's cut off by the epoch time.
+
 \end{enumerate}
 
 \section*{Logistic Regression}
