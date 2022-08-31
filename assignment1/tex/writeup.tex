@@ -6,6 +6,7 @@
 \usepackage{array}
 \usepackage{varwidth}
 \usepackage{tabularx}
+\usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{graphicx}
@@ -136,8 +137,24 @@ We choose to keep the maximum number of epochs at 100, as for $b=10^6$, the slow
 
 \end{enumerate}
 
+\pagebreak
+
 \section*{Logistic Regression}
 
+\begin{enumerate}
+    \item We obtained the hessian as 
+    \begin{align*}
+        H(\theta) = \left[ \sum_{i=1}^m -\sigma(\theta^T x^{(i)})(1-\sigma(\theta^T x^{(i)})) x_j^{(i)}x_k^{(i)} \right]_{j,k}^n
+    \end{align*}
+
+    Optimizing this via newton method for 1000 iterations, we obtained $\hat{\theta} = (0.11,2.25,-2.23)$
+
+    \item \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q3/plots/b_scatter.png}}\end{center}
+
+\end{enumerate}
+
 \section*{Gaussian Discriminant Analysis}
+
+
 
 \end{document}
