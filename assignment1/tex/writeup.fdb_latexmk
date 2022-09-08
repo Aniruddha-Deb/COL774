@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1661866732 "writeup.tex" "writeup.pdf" "writeup" 1661866735
+["pdflatex"] 1662645628 "writeup.tex" "writeup.pdf" "writeup" 1662645630
   "../Q1/plots/b_plot.png" 1661675306 30214 df9e43ec381c6c3111d9009939738109 ""
   "../Q1/plots/c_mesh.png" 1661675319 285665 ffbb09f485aebbc16c8c9b30859fed09 ""
   "../Q1/plots/d_contour.png" 1661675334 63944 9b92cd830e79f4b4f45a2f03f2a1627d ""
@@ -8,7 +8,10 @@
   "../Q1/plots/e_contour_1.png" 1661675380 64035 733e83650e7d593629274948aeaff4e3 ""
   "../Q2/plots/d_paths.png" 1661783172 204506 c3bda64a96eee41434f6a9546f1daac7 ""
   "../Q2/plots/loss.png" 1661784511 47253 e6b2add3f83697509bf00aa387f7a79e ""
-  "../Q3/plots/b_scatter.png" 1661866414 58456 5c5bbd51397b8ff43bf44a1303ed013a ""
+  "../Q3/plots/b_scatter.png" 1662036120 58453 93f607aa6fd9a490d3d3b016fa2c1428 ""
+  "../Q4/plots/b_scatter.png" 1662037683 52874 14f59b1c349ba6488d09bc02056102bc ""
+  "../Q4/plots/c_lin_boundary.png" 1662037699 62136 ecb7ef0e02581d00bcfb19166495d42c ""
+  "../Q4/plots/e_quad_boundary.png" 1662038399 60246 5852295730f4898cbe4821bd567d9cf7 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcss1200.tfm" 1136768653 1536 809a177113b9dd743dafe00d0870078f ""
@@ -159,11 +162,11 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1586288239 4811913 0be9a7e86c70a26e5e3042966bcd7097 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1602772656 2432464 7844816cc6fecd2c5ab11838b94c429d ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "writeup.aux" 1661866734 662 b2b94621371df8d9296b8bf5bec1b851 "pdflatex"
-  "writeup.out" 1661866733 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "writeup.tex" 1661866730 6394 b6be72a926a07baa90780503b01ed412 ""
+  "writeup.aux" 1662645630 662 b2b94621371df8d9296b8bf5bec1b851 "pdflatex"
+  "writeup.out" 1662645628 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "writeup.tex" 1662645627 7945 9d601cc1205ed60ff28e19a34e3185fb ""
   (generated)
-  "writeup.out"
   "writeup.aux"
-  "writeup.log"
+  "writeup.out"
   "writeup.pdf"
+  "writeup.log"

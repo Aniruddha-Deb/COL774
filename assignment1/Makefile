@@ -2,7 +2,7 @@ tgt=build/2020cs10869_aniruddha_deb
 
 submission: Q
 	cp tex/writeup.pdf $(tgt)
-	(cd build && zip -r 2020cs10869_aniruddha_deb.zip 2020cs10869_aniruddha_deb)
+	(cd build && zip -r 2020CS10869_aniruddha_deb.zip 2020CS10869_aniruddha_deb)
 
 dir:
 	mkdir -p build

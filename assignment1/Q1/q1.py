@@ -60,7 +60,7 @@ class NormalizedLinearRegressor:
     
     def predict(self,x):
         
-        X = np.column_stack([np.full(self.m,1),(x-self.mean_x)/self.std_x])
+        X = np.column_stack([np.full(len(x),1),(x-self.mean_x)/self.std_x])
         Y = X@self.theta
         
         return (Y.flatten()*self.std_y) + self.mean_y
@@ -159,19 +159,18 @@ def plot_contour(x, y, descent_path, save_file_name=None):
     # return fig
 
 
-if __name__ == "__main__":
+if __name__ == "__main__" and "__file__" in globals():
     if len(sys.argv) < 3:
         print("ERROR: this script requires a train and test directory. Exiting.")
     
-    input_dir, output_dir = sys.argv[1],sys.argv[2]
-    trainX = np.loadtxt(f"{input_dir}/X.csv")
-    trainY = np.loadtxt(f"{input_dir}/Y.csv")
-    testX = np.loadtxt(f"{input_dir}/X.csv")
+    train_dir, test_dir = sys.argv[1],sys.argv[2]
+    trainX = np.loadtxt(f"{train_dir}/X.csv")
+    trainY = np.loadtxt(f"{train_dir}/Y.csv")
+    testX = np.loadtxt(f"{test_dir}/X.csv")
     
     regressor = NormalizedLinearRegressor()
     regressor.fit(trainX,trainY)
     preds = regressor.predict(testX)
-    print(preds.shape)
     np.savetxt("result_1.txt",preds)
 
 

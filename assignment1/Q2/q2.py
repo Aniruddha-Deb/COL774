@@ -2,9 +2,9 @@
 # coding: utf-8
 
 import numpy as np
-import pandas as pd
 from scipy.stats import norm
 import matplotlib.pyplot as plt
+import sys
 
 
 #########################################
@@ -77,7 +77,7 @@ def stochastic_gradient_descent(X, Y, theta, batch_size=100, eta=0.001, stop_lim
                 if prev_loss_av:
                     # compute ratio of loss of previous theta and current theta
                     # if it's less than the stop limit, then stop.
-                    if (loss_av < prev_loss_av and abs(loss_av-prev_loss_av) < stop_lim) and loss_av < 1):
+                    if (loss_av < prev_loss_av and abs(loss_av-prev_loss_av) < stop_lim and loss_av < 1):
                         theta_pts.append(theta_n)
                         return (theta_pts,losses)
                     
@@ -127,5 +127,21 @@ def plot_paths(paths, elev=45, azim=60, save_file_name=None):
         fig.savefig(save_file_name, bbox_inches='tight')
     
     ax.legend()
+
+
+# In[ ]:
+
+
+if __name__ == "__main__" and "__file__" in globals():
+    if len(sys.argv) < 2:
+        print("ERROR: this script requires a test directory. Exiting.")
+    
+    test_dir = sys.argv[1]
+    testX = np.loadtxt(f"{test_dir}/X.csv", delimiter=",")
+    
+#     regressor = NormalizedLinearRegressor()
+#     regressor.fit(trainX,trainY)
+#     preds = regressor.predict(testX)
+#     np.savetxt("result_1.txt",preds)
 
 

@@ -4,7 +4,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
-import pandas as pd
+import sys
 
 
 #########################################
@@ -12,7 +12,7 @@ import pandas as pd
 #########################################
 
 def normalize(a):
-    return (a-a.mean())/a.std()
+    return (a-a.mean(axis=0))/a.std()
 
 def sigmoid(a):
     return 1/(1+np.exp(-a))
@@ -57,5 +57,36 @@ def plot_data(X,Y,theta,save_file_name=None):
     
     if save_file_name:
         plt.savefig(save_file_name, dpi=150, bbox_inches='tight')
+
+
+class LogisticRegressor:
+    
+    def __init__(self,theta=np.array([[0],[0],[0]])):
+        self.theta = theta
+        
+    def fit(self,X,Y,**kwargs):
+        self.theta = newton_optimize(X,Y,self.theta)
+        
+    def predict(self,X):
+        Y = sigmoid(X@self.theta)
+        return np.where(Y>0.5,1,0).flatten()
+
+
+if __name__ == "__main__" and "__file__" in globals():
+    if len(sys.argv) < 3:
+        print("ERROR: this script requires a train and test directory. Exiting.")
+    
+    train_dir, test_dir = sys.argv[1],sys.argv[2]
+    trainX = normalize(np.loadtxt(f"{train_dir}/X.csv", delimiter=','))
+    trainY = np.loadtxt(f"{train_dir}/Y.csv").reshape(-1,1)
+    testX = normalize(np.loadtxt(f"{test_dir}/X.csv", delimiter=','))
+    
+    trainX = np.column_stack([np.full(len(trainX),1),trainX])
+    testX = np.column_stack([np.full(len(testX),1),testX])
+    
+    regressor = LogisticRegressor()
+    regressor.fit(trainX,trainY)
+    preds = regressor.predict(testX)
+    np.savetxt("result_3.txt",preds)
 
 

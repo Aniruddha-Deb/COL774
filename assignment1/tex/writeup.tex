@@ -51,11 +51,13 @@
 
     \item \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/b_plot.png}}\end{center}
 
-    \item \begin{center}3D mesh plot of gradient, and the path taken by gradient descent ($\eta = 0.01$): \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/c_mesh.png}}\end{center}
-
     \clearpage
 
+    \item \begin{center}3D mesh plot of gradient, and the path taken by gradient descent ($\eta = 0.01$): \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/c_mesh.png}}\end{center}
+
     \item \begin{center}2D contour plot of gradient, and the path taken by gradient descent ($\eta = 0.01$): \raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q1/plots/d_contour.png}}\end{center}
+
+    \clearpage
 
     \item Paths taken by Gradient Descent for varying values of $\eta$: 
     
@@ -147,14 +149,57 @@ We choose to keep the maximum number of epochs at 100, as for $b=10^6$, the slow
         H(\theta) = \left[ \sum_{i=1}^m -\sigma(\theta^T x^{(i)})(1-\sigma(\theta^T x^{(i)})) x_j^{(i)}x_k^{(i)} \right]_{j,k}^n
     \end{align*}
 
-    Optimizing this via newton method for 1000 iterations, we obtained $\hat{\theta} = (0.11,2.25,-2.23)$
+    Optimizing this via newton method for 1000 iterations, we obtained $\hat{\theta} = (0.26,2.25,-2.23)$
 
     \item \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q3/plots/b_scatter.png}}\end{center}
 
 \end{enumerate}
 
+\pagebreak
+
 \section*{Gaussian Discriminant Analysis}
 
+\begin{enumerate}
+    \item Running GDA on the normalized data gives us 
+    \begin{align*}
+        \mu_0 &= (-0.134,0.217) \\
+        \mu_1 &= (0.134,-0.217) \\
+        \Sigma &= 
+        \begin{bmatrix}
+            0.014 & -0.001 \\
+            -0.001 & 0.053
+        \end{bmatrix}
+    \end{align*}
+
+    \item \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q4/plots/b_scatter.png}}\end{center}
+
+    \item For the same covariance matrix, the separator is a normal to the line joining the two means, passing through the weighted average (weighted by the inverse number of datapoints).
+
+    In this case, since the number of datapoints in both classes are equal, the separator is simply the perpendicular bisector.
+
+    \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q4/plots/c_lin_boundary.png}}\end{center}
+
+    \item Running GDA for two separate covariances on the normalized data gives us 
+    \begin{align*}
+        \mu_0 &= (-0.134,0.217) \\
+        \mu_1 &= (0.134,-0.217) \\
+        \Sigma_0 &= 
+        \begin{bmatrix}
+            0.012 & -0.009 \\
+            -0.009 & 0.065
+        \end{bmatrix} \\
+        \Sigma_1 &= 
+        \begin{bmatrix}
+            0.015 & 0.006 \\
+            0.006 & 0.042
+        \end{bmatrix}
+    \end{align*}
+
+    \item The quadratic boundary obtained is as follows: 
+
+    \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q4/plots/e_quad_boundary.png}}\end{center}
+
+\end{enumerate}
 
 
 \end{document}
