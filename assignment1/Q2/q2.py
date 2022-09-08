@@ -53,8 +53,8 @@ def stochastic_gradient_descent(X, Y, theta, batch_size=100, eta=0.001, stop_lim
     # going over (atleast) 1000 samples.
     
     # this prevent the algorithm from taking too much time or if it's stuck without converging
-    print(f"len_y = {len(Y)}")
-    print(len(Y)//batch_size)
+    #print(f"len_y = {len(Y)}")
+    #print(len(Y)//batch_size)
     while t < t_lim:
         
         n_samples = 0
@@ -129,7 +129,16 @@ def plot_paths(paths, elev=45, azim=60, save_file_name=None):
     ax.legend()
 
 
-# In[ ]:
+class SGDLinearRegressor:
+    
+    def __init__(self):
+        self.theta = np.array([[0],[0],[0]])
+        
+    def fit(self,X,Y):
+        self.theta = stochastic_gradient_descent(X,Y,self.theta)[0][-1]
+    
+    def predict(self,X):
+        return X@self.theta
 
 
 if __name__ == "__main__" and "__file__" in globals():
@@ -138,10 +147,13 @@ if __name__ == "__main__" and "__file__" in globals():
     
     test_dir = sys.argv[1]
     testX = np.loadtxt(f"{test_dir}/X.csv", delimiter=",")
+    testX = np.hstack([np.full(testX.shape[0],1).reshape(-1,1),testX])
     
-#     regressor = NormalizedLinearRegressor()
-#     regressor.fit(trainX,trainY)
-#     preds = regressor.predict(testX)
-#     np.savetxt("result_1.txt",preds)
+    trainX,trainY = sample(n=100000)
+    
+    model = SGDLinearRegressor()
+    model.fit(trainX,trainY)
+    preds = model.predict(testX)
+    np.savetxt("result_2.txt",preds.flatten())
 
 

@@ -143,7 +143,7 @@ We choose to keep the maximum number of epochs at 100, as for $b=10^6$, the slow
 
 \section*{Logistic Regression}
 
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
     \item We obtained the hessian as 
     \begin{align*}
         H(\theta) = \left[ \sum_{i=1}^m -\sigma(\theta^T x^{(i)})(1-\sigma(\theta^T x^{(i)})) x_j^{(i)}x_k^{(i)} \right]_{j,k}^n
@@ -159,7 +159,7 @@ We choose to keep the maximum number of epochs at 100, as for $b=10^6$, the slow
 
 \section*{Gaussian Discriminant Analysis}
 
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
     \item Running GDA on the normalized data gives us 
     \begin{align*}
         \mu_0 &= (-0.134,0.217) \\
@@ -198,6 +198,10 @@ We choose to keep the maximum number of epochs at 100, as for $b=10^6$, the slow
     \item The quadratic boundary obtained is as follows: 
 
     \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q4/plots/e_quad_boundary.png}}\end{center}
+
+    \item The quadratic decision boundary is better at classification than the linear one: there are only 4 misclassifications in the quadratic classifier compared to 7 in the linear.
+
+    The quadratic decision boundary in this case is a \textbf{hyperbola}, as from \href{https://engineering.purdue.edu/ChanGroup/ECE595/files/chapter2.pdf}{Chan} Pg. 24, we see that if $\Sigma_0^{-1} - \Sigma_1^{-1}$ has one negative eigenvalue and one positive eigenvalue, the separator will be hyperbolic. In this case, the eigenvalues come out to be $34.6$ and $-20.4$, implying that the decision boundary is a hyperbola.
 
 \end{enumerate}
 

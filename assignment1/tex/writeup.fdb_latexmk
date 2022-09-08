@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1662645628 "writeup.tex" "writeup.pdf" "writeup" 1662645630
+["pdflatex"] 1662650631 "writeup.tex" "writeup.pdf" "writeup" 1662650633
   "../Q1/plots/b_plot.png" 1661675306 30214 df9e43ec381c6c3111d9009939738109 ""
   "../Q1/plots/c_mesh.png" 1661675319 285665 ffbb09f485aebbc16c8c9b30859fed09 ""
   "../Q1/plots/d_contour.png" 1661675334 63944 9b92cd830e79f4b4f45a2f03f2a1627d ""
@@ -162,11 +162,11 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1586288239 4811913 0be9a7e86c70a26e5e3042966bcd7097 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1602772656 2432464 7844816cc6fecd2c5ab11838b94c429d ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "writeup.aux" 1662645630 662 b2b94621371df8d9296b8bf5bec1b851 "pdflatex"
-  "writeup.out" 1662645628 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "writeup.tex" 1662645627 7945 9d601cc1205ed60ff28e19a34e3185fb ""
+  "writeup.aux" 1662650633 662 b2b94621371df8d9296b8bf5bec1b851 "pdflatex"
+  "writeup.out" 1662650632 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "writeup.tex" 1662650629 8588 352f3591c960a9fbdb81a08fe5587e86 ""
   (generated)
-  "writeup.aux"
-  "writeup.out"
   "writeup.pdf"
+  "writeup.out"
+  "writeup.aux"
   "writeup.log"

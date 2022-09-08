@@ -269,6 +269,7 @@ INPUT ../Q4/plots/c_lin_boundary.png
 INPUT ../Q4/plots/e_quad_boundary.png
 INPUT ../Q4/plots/e_quad_boundary.png
 INPUT ../Q4/plots/e_quad_boundary.png
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT writeup.aux
 INPUT ./writeup.out
 INPUT ./writeup.out
