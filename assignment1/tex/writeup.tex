@@ -162,6 +162,7 @@ We choose to keep the maximum number of epochs at 100, as for $b=10^6$, the slow
 \begin{enumerate}[label=(\alph*)]
     \item Running GDA on the normalized data gives us 
     \begin{align*}
+        \phi &= 0.5 \\
         \mu_0 &= (-0.134,0.217) \\
         \mu_1 &= (0.134,-0.217) \\
         \Sigma &= 
@@ -173,14 +174,15 @@ We choose to keep the maximum number of epochs at 100, as for $b=10^6$, the slow
 
     \item \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q4/plots/b_scatter.png}}\end{center}
 
-    \item For the same covariance matrix, the separator is a normal to the line joining the two means, passing through the weighted average (weighted by the inverse number of datapoints).
+    \item For the same covariance matrix, the separator is a normal to the line joining the two means, passing through the point $\mu_0(1-\phi) + \mu_1\phi$
 
-    In this case, since the number of datapoints in both classes are equal, the separator is simply the perpendicular bisector.
+    In this case, since the number of datapoints in both classes are equal ($\phi = 0.5$) the separator is simply the perpendicular bisector.
 
     \begin{center}\raisebox{-.9\height}{\includegraphics[width=0.7\textwidth]{../Q4/plots/c_lin_boundary.png}}\end{center}
 
     \item Running GDA for two separate covariances on the normalized data gives us 
     \begin{align*}
+        \phi &= 0.5 \\
         \mu_0 &= (-0.134,0.217) \\
         \mu_1 &= (0.134,-0.217) \\
         \Sigma_0 &= 

@@ -1,4 +1,4 @@
-tgt=build/2020cs10869_aniruddha_deb
+tgt=build/2020CS10869_aniruddha_deb
 
 submission: Q
 	cp tex/writeup.pdf $(tgt)
