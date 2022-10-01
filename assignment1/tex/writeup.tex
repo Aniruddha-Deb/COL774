@@ -63,9 +63,9 @@
     
     \begin{tabular}{c c c}
         $\eta = 0.001$ & $\eta = 0.025$ & $\eta = 0.1$ \\
-        \includegraphics[width=0.3\textwidth]{../Q1/plots/e_contour_001.png} &
-        \includegraphics[width=0.3\textwidth]{../Q1/plots/e_contour_025.png} &
-        \includegraphics[width=0.3\textwidth]{../Q1/plots/e_contour_1.png} \\
+        \includegraphics[width=0.28\textwidth]{../Q1/plots/e_contour_001.png} &
+        \includegraphics[width=0.28\textwidth]{../Q1/plots/e_contour_025.png} &
+        \includegraphics[width=0.28\textwidth]{../Q1/plots/e_contour_1.png} \\
     \end{tabular}
 
     We notice that with a smaller step size, fewer steps are required to reach convergence; this is beneficial in this case, but can also lead to gradient descent overshooting/not converging in some cases.
@@ -83,7 +83,7 @@ From the video shared, it was suggested that to examine the convergence, loss fu
 \includegraphics[width=0.7\textwidth]{../Q2/plots/loss.png}
 \end{center}
 
-We see that for $b=10^4$ and $b=10^6$, the algorithm does not converge as the learning rate is too low, and the cutoff condition stops it early. As a result, we also include an absolute loss cutoff for learning: stop when the averaged loss over 1000 examples is less than 1.\\
+We see that for $b=10^4$ and $b=10^6$, the algorithm does not converge as the learning rate is too low, and the cutoff condition stops it early. As a result, we also include an absolute loss cutoff for learning: stop when the averaged loss over 1000 examples is less than 1.
 
 This example shows how to find such a window, given that we don't know the parameters that SGD will converge to: we manually examine the graphs and see what values our converging loss functions are reaching. The graph for $b=1$ and $b=100$ reaches values marginally under 1 (0.97), hence we choose 1 as our cutoff.
 \end{mybox}
@@ -91,6 +91,10 @@ This example shows how to find such a window, given that we don't know the param
 \begin{mybox}{red}{Note}
 We choose to keep the maximum number of epochs at 100, as for $b=10^6$, the slow algorithm was not converging on my machine even after running it for $\approx$5 minutes.
 \end{mybox}
+
+\begin{enumerate}
+    \item 
+\end{enumerate}
 
 \begin{enumerate}[label=(\alph*)]
     \addtocounter{enumi}{1}
