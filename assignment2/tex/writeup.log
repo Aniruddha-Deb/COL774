@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.15)  1 OCT 2022 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.15)  2 OCT 2022 21:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -564,31 +564,87 @@ File: ../Q1/Qd/wc_neg.png Graphic file (type png)
 <use ../Q1/Qd/wc_neg.png>
 Package pdftex.def Info: ../Q1/Qd/wc_neg.png  used on input line 102.
 (pdftex.def)             Requested size: 215.20645pt x 107.60081pt.
- [2 <../Q1/Qd/wc_pos.png (PNG copy)> <../Q1/Qd/wc_neg.png (PNG copy)>] [3
+ [2 <../Q1/Qd/wc_pos.png (PNG copy)> <../Q1/Qd/wc_neg.png (PNG copy)>]
+<../Q2/Qa/sv_1.png, id=46, 321.2pt x 321.2pt>
+File: ../Q2/Qa/sv_1.png Graphic file (type png)
+<use ../Q2/Qa/sv_1.png>
+Package pdftex.def Info: ../Q2/Qa/sv_1.png  used on input line 132.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+<../Q2/Qa/sv_2.png, id=47, 321.2pt x 321.2pt>
+File: ../Q2/Qa/sv_2.png Graphic file (type png)
+<use ../Q2/Qa/sv_2.png>
+Package pdftex.def Info: ../Q2/Qa/sv_2.png  used on input line 133.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+<../Q2/Qa/sv_3.png, id=48, 321.2pt x 321.2pt>
+File: ../Q2/Qa/sv_3.png Graphic file (type png)
+<use ../Q2/Qa/sv_3.png>
+Package pdftex.def Info: ../Q2/Qa/sv_3.png  used on input line 134.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+<../Q2/Qa/sv_4.png, id=49, 321.2pt x 321.2pt>
+File: ../Q2/Qa/sv_4.png Graphic file (type png)
+<use ../Q2/Qa/sv_4.png>
+Package pdftex.def Info: ../Q2/Qa/sv_4.png  used on input line 135.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+<../Q2/Qa/sv_5.png, id=50, 321.2pt x 321.2pt>
+File: ../Q2/Qa/sv_5.png Graphic file (type png)
+<use ../Q2/Qa/sv_5.png>
+Package pdftex.def Info: ../Q2/Qa/sv_5.png  used on input line 136.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+<../Q2/Qa/w.png, id=51, 321.2pt x 321.2pt>
+File: ../Q2/Qa/w.png Graphic file (type png)
+<use ../Q2/Qa/w.png>
+Package pdftex.def Info: ../Q2/Qa/w.png  used on input line 142.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+<../Q2/Qb/sv_1.png, id=52, 321.2pt x 321.2pt>
+File: ../Q2/Qb/sv_1.png Graphic file (type png)
+<use ../Q2/Qb/sv_1.png>
+Package pdftex.def Info: ../Q2/Qb/sv_1.png  used on input line 152.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+<../Q2/Qb/sv_2.png, id=53, 321.2pt x 321.2pt>
+File: ../Q2/Qb/sv_2.png Graphic file (type png)
+<use ../Q2/Qb/sv_2.png>
+Package pdftex.def Info: ../Q2/Qb/sv_2.png  used on input line 153.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+<../Q2/Qb/sv_3.png, id=54, 321.2pt x 321.2pt>
+File: ../Q2/Qb/sv_3.png Graphic file (type png)
+<use ../Q2/Qb/sv_3.png>
+Package pdftex.def Info: ../Q2/Qb/sv_3.png  used on input line 154.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+<../Q2/Qb/sv_4.png, id=55, 321.2pt x 321.2pt>
+File: ../Q2/Qb/sv_4.png Graphic file (type png)
+<use ../Q2/Qb/sv_4.png>
+Package pdftex.def Info: ../Q2/Qb/sv_4.png  used on input line 155.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+<../Q2/Qb/sv_5.png, id=56, 321.2pt x 321.2pt>
+File: ../Q2/Qb/sv_5.png Graphic file (type png)
+<use ../Q2/Qb/sv_5.png>
+Package pdftex.def Info: ../Q2/Qb/sv_5.png  used on input line 156.
+(pdftex.def)             Requested size: 73.36244pt x 73.35982pt.
+ [3
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
+ <../Q2/Qa/sv_1.png (PNG copy)> <../Q2/Qa/sv_2.png (PNG copy)> <../Q2/Qa/sv_3.png (PNG copy)> <../Q2/Qa/sv_4.png (PNG copy)> <../Q2/Qa/sv_5.png (PNG copy)> <../Q2/Qa/w.png (PNG copy)> <../Q2/Qb/sv_1.png (PNG copy)> <../Q2/Qb/sv_2.png (PNG copy)> <../Q2/Qb/sv_3.png (PNG copy)> <../Q2/Qb/sv_4.png (PNG copy)> <../Q2/Qb/sv_5.png (PNG copy)>] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
  (./writeup.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 127.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 127.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
 Package rerunfilecheck Info: File `writeup.out' has not changed.
 (rerunfilecheck)             Checksum: 8310AF6B99F22829CB87CCDD65A85C7F;140.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 127.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
  ) 
 Here is how much of TeX's memory you used:
- 16854 strings out of 480608
- 314259 string characters out of 5903629
- 577603 words of memory out of 5000000
- 32407 multiletter control sequences out of 15000+600000
+ 16932 strings out of 480608
+ 315574 string characters out of 5903629
+ 578603 words of memory out of 5000000
+ 32462 multiletter control sequences out of 15000+600000
  539389 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,14n,75p,966b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on writeup.pdf (3 pages, 1212330 bytes).
+ 59i,14n,75p,966b,475s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on writeup.pdf (4 pages, 1296966 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 119 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
+ 30 named destinations out of 1000 (max. 500000)
+ 112 words of extra memory for PDF output out of 10000 (max. 10000000)
 

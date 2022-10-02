@@ -122,6 +122,79 @@
 
 \section{Binary SVM}
 
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{enumerate}[label=\roman*.]
+        \item With a threshold of $\alpha_i > 10^{-6}$ for the support vectors, we obtain \textbf{1528} support vectors, which is \textbf{38.2 \%} of the training set
+        \item The test set accuracy we obtain is \textbf{79 \%} (1580/2000 test images were classified correctly)
+        \item The top 5 support vectors are:
+
+        \begin{tabular}{c c c c c}
+            \includegraphics[width=0.15\textwidth]{../Q2/Qa/sv_1.png} &
+            \includegraphics[width=0.15\textwidth]{../Q2/Qa/sv_2.png} &
+            \includegraphics[width=0.15\textwidth]{../Q2/Qa/sv_3.png} &
+            \includegraphics[width=0.15\textwidth]{../Q2/Qa/sv_4.png} &
+            \includegraphics[width=0.15\textwidth]{../Q2/Qa/sv_5.png} 
+        \end{tabular}
+
+        The weight image is:
+
+        \begin{center}
+            \includegraphics[width=0.15\textwidth]{../Q2/Qa/w.png} 
+        \end{center}
+    \end{enumerate}
+
+    \item \begin{enumerate}[label=\roman*.]
+        \item With a threshold of $\alpha_i > 10^{-6}$ for the support vectors and the given parameters, we obtain \textbf{1769} support vectors, which is \textbf{44.2 \%} of the training set. Out of these, \textbf{1143} support vectors overlap with the linear ones
+        \item The test set accuracy we obtain is \textbf{85.75 \%} (1715/2000 test images were classified correctly)
+        \item The top 5 support vectors are:
+
+        \begin{tabular}{c c c c c}
+            \includegraphics[width=0.15\textwidth]{../Q2/Qb/sv_1.png} &
+            \includegraphics[width=0.15\textwidth]{../Q2/Qb/sv_2.png} &
+            \includegraphics[width=0.15\textwidth]{../Q2/Qb/sv_3.png} &
+            \includegraphics[width=0.15\textwidth]{../Q2/Qb/sv_4.png} &
+            \includegraphics[width=0.15\textwidth]{../Q2/Qb/sv_5.png} 
+        \end{tabular}
+
+        \item The Gaussian Kernel allows for more fine-grained boundaries to be drawn between the datapoints. TODO this
+    \end{enumerate}
+
+    \item \begin{enumerate}[label=\roman*.]
+        \item For the Scikit-learn implementation, we obtain \textbf{1811} support vectors with a gaussian kernel and \textbf{1494} support vectors with a linear kernel. The pairwise overlaps are given below:
+        \begin{center}
+            \begin{tabular}{c c}
+                & QP \\
+                Scikit & 
+            \begin{tabular}{c|c|c|}
+                    & lin  & rbf  \\   
+                \hline
+                lin & 1494 & 1123 \\
+                \hline
+                rbf & 1130 & 1560 \\
+                \hline
+            \end{tabular}
+            \end{tabular}
+        \end{center}
+
+    \item The normed difference of weights is $||w_{sk} - w_{qp}|| = 1571.61$, and the difference of biases is $b_{sk} - b_{qp} = -1.58$. Note that $b_{sk} = 0$.
+
+    \item The test set accuracy we obtain is \textbf{86.95 \%} (1739/2000) for the RBF kernel and \textbf{79.1 \%} (1582/2000) for the linear kernel
+
+        \item The times are given below:
+            \begin{center}
+                \begin{tabular}{|l|c|}
+                    \hline
+                    Scikit RBF & 13.8 s \\
+                    Scikit linear & 26.4 s\\
+                    QP RBF & 58.1 s\\
+                    QP linear & 47.7 s\\
+                    \hline
+                \end{tabular}
+            \end{center}
+    \end{enumerate}
+
+\end{enumerate}
+
 \section{Multiclass SVM}
 
 \end{document}
