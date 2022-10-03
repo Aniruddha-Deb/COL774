@@ -44,13 +44,13 @@
 \begin{enumerate}[label=(\alph*)]
   
     \item Naive Bayes was implemented using the \textbf{Multinomial Event Model} as discussed in class, which uses the frequency of the words rather than just their presence. The vocabulary was learnt from the training dataset, and any words not in the vocabulary in the test dataset were ignored. With this implementation, the following results were obtained:
-    \begin{enumerate}
+    \begin{enumerate}[label=\roman*.]
         \item An accuracy of $79.313\%$ on the test dataset, with 7501/10000 positive examples and 4396/5000 negative examples correctly classified
         \item The following word clouds were obtained. Note that there are a lot of stopwords, which we remove in part (d)
     \end{enumerate}
     \begin{center}
         \begin{tabular}{c c}
-            \includegraphics[width=0.44\textwidth]{../Q1/plots/wc_pos.png} & \includegraphics[width=0.44\textwidth]{../Q1/plots/wc_neg.png} \\
+            \includegraphics[width=0.44\textwidth]{../Q1/Qa/wc_pos.png} & \includegraphics[width=0.44\textwidth]{../Q1/Qa/wc_neg.png} \\
             Positive reviews & Negative reviews
         \end{tabular}
     \end{center}
@@ -91,7 +91,7 @@
     \end{tabular}
     \end{center}
 
-    TODO part 2 of this: wdym "highest value of diagonal entry"?
+    The highest sum of diagonal entries is in the Naive Bayes classifier. This implies that the accuracy (number of correctly classified samples) of Naive Bayes is better than randomly or selectively guessing.
 
     The pattern is that the column sums for the actuals always add up to the number of examples of that category in the training set. This is because the actual column measures the number of actual examples in the dataset, and across all predictions, would sum to the total number of that category in the dataset.
 
@@ -160,7 +160,7 @@
         \end{tabular}
         \end{center}
 
-        \item The Gaussian Kernel allows for more fine-grained boundaries to be drawn between the datapoints. TODO this
+        \item The Gaussian Kernel allows for more fine-grained boundaries to be drawn between the datapoints, which 'fit' the shape of the data boundaries better compared to a linear separator. This is why the accuracy of the gaussian kernel is better than the linear kernel.
     \end{enumerate}
 
     \item \begin{enumerate}[label=\roman*.]
@@ -184,7 +184,7 @@
 
     \item The test set accuracy we obtain is \textbf{86.95 \%} (1739/2000) for the RBF kernel and \textbf{79.1 \%} (1582/2000) for the linear kernel
 
-        \item The times are given below:
+        \item The training times are given below:
             \begin{center}
                 \begin{tabular}{|l|c|}
                     \hline
@@ -201,7 +201,7 @@
 
 \section{Multiclass SVM}
 
-\begin{enumerate}
+\begin{enumerate}[label=(\alph*)]
     \item Using a multi-class variation of the CVXOPT solver with the same parameters as before ($\gamma = 0.001, C = 1$, and breaking ties based on the sum of scores (highest first), we obtain a test set accuracy of \textbf{59.02 \%} (2951/5000). 
     \item Using the Scikit-Learn SVM package, we obtain a test set accuracy of \textbf{63.54 \%} (3177/5000). The Scikit implementation is much faster, requiring only 187.8 s to train. The CVXOPT implementation, by comparision, takes 494.4 seconds to train.
 
@@ -213,7 +213,7 @@
         \end{tabular}
     \end{center}
 
-    Classes 2 and 4 are most often misinterpreted as each other. Below, we plot 10 randomly chosen examples which are misclassified by Scikit and CVXOPT, with their predicted and original labels respectively
+    Classes 2 and 4 are most often misinterpreted as each other. Below, we plot 10 randomly chosen examples which are misclassified by Scikit and CVXOPT, with their {\color{red} predicted} and {\color{green} original} labels respectively
 
     \begin{center}
         \setlength\tabcolsep{1pt}
@@ -265,14 +265,14 @@
         \end{tabular}
     \end{center}
 
-    These make sense. (Explain)
+    The classes of the CIFAR-10 dataset are Airplane(0), Automobile(1), Bird(2), Cat(3) and Deer(4). The model(s) misclassify several examples in the bird, cat and deer categories amongst each other, which is to be expected as the backgrounds in which these animals are present is similar. Similarly, Airplanes and Automobiles are most commonly confused with each other rather than with birds, cats or deer because they have similar features (large regions of the same colour, with an urban or blue background).
 
     \item The plot is given on the following page. We see an increasing trend, where the best accuracy is given by the 'hardest' classifier i.e. for $C = 10$. This value also gives the best test set accuracy. 
         
-        <comments here>
+        The value of C tells the classifier how much we want to avoid misclassifying each example: larger values of C will mean less misclassifications on the training dataset, but this may lead to overfitting. In our case, for small values of C, the model underfits, and chooses a very broad decision boundary, leading to poor cross-validation/test accuracy
 
         \begin{center}
-            \includegraphics[width=0.6\textwidth]{../Q3/Qd/acc.pdf}
+            \includegraphics[width=0.7\textwidth]{../Q3/Qd/acc.pdf}
         \end{center}
 
 \end{enumerate}
