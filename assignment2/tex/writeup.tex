@@ -128,18 +128,20 @@
         \item The test set accuracy we obtain is \textbf{79 \%} (1580/2000 test images were classified correctly)
         \item The top 5 support vectors are:
 
+        \begin{center}
         \begin{tabular}{c c c c c}
-            \includegraphics[width=0.15\textwidth]{../Q2/Qa/sv_1.png} &
-            \includegraphics[width=0.15\textwidth]{../Q2/Qa/sv_2.png} &
-            \includegraphics[width=0.15\textwidth]{../Q2/Qa/sv_3.png} &
-            \includegraphics[width=0.15\textwidth]{../Q2/Qa/sv_4.png} &
-            \includegraphics[width=0.15\textwidth]{../Q2/Qa/sv_5.png} 
+            \includegraphics[width=0.1\textwidth]{../Q2/Qa/sv_1.png} &
+            \includegraphics[width=0.1\textwidth]{../Q2/Qa/sv_2.png} &
+            \includegraphics[width=0.1\textwidth]{../Q2/Qa/sv_3.png} &
+            \includegraphics[width=0.1\textwidth]{../Q2/Qa/sv_4.png} &
+            \includegraphics[width=0.1\textwidth]{../Q2/Qa/sv_5.png} 
         \end{tabular}
+        \end{center}
 
         The weight image is:
 
         \begin{center}
-            \includegraphics[width=0.15\textwidth]{../Q2/Qa/w.png} 
+            \includegraphics[width=0.1\textwidth]{../Q2/Qa/w.png} 
         \end{center}
     \end{enumerate}
 
@@ -148,13 +150,15 @@
         \item The test set accuracy we obtain is \textbf{85.75 \%} (1715/2000 test images were classified correctly)
         \item The top 5 support vectors are:
 
+        \begin{center}
         \begin{tabular}{c c c c c}
-            \includegraphics[width=0.15\textwidth]{../Q2/Qb/sv_1.png} &
-            \includegraphics[width=0.15\textwidth]{../Q2/Qb/sv_2.png} &
-            \includegraphics[width=0.15\textwidth]{../Q2/Qb/sv_3.png} &
-            \includegraphics[width=0.15\textwidth]{../Q2/Qb/sv_4.png} &
-            \includegraphics[width=0.15\textwidth]{../Q2/Qb/sv_5.png} 
+            \includegraphics[width=0.1\textwidth]{../Q2/Qb/sv_1.png} &
+            \includegraphics[width=0.1\textwidth]{../Q2/Qb/sv_2.png} &
+            \includegraphics[width=0.1\textwidth]{../Q2/Qb/sv_3.png} &
+            \includegraphics[width=0.1\textwidth]{../Q2/Qb/sv_4.png} &
+            \includegraphics[width=0.1\textwidth]{../Q2/Qb/sv_5.png} 
         \end{tabular}
+        \end{center}
 
         \item The Gaussian Kernel allows for more fine-grained boundaries to be drawn between the datapoints. TODO this
     \end{enumerate}
@@ -196,5 +200,81 @@
 \end{enumerate}
 
 \section{Multiclass SVM}
+
+\begin{enumerate}
+    \item Using a multi-class variation of the CVXOPT solver with the same parameters as before ($\gamma = 0.001, C = 1$, and breaking ties based on the sum of scores (highest first), we obtain a test set accuracy of \textbf{59.02 \%} (2951/5000). 
+    \item Using the Scikit-Learn SVM package, we obtain a test set accuracy of \textbf{63.54 \%} (3177/5000). The Scikit implementation is much faster, requiring only 187.8 s to train. The CVXOPT implementation, by comparision, takes 494.4 seconds to train.
+
+    \item The confusion matrices for both implementations is as follows:
+    \begin{center}
+        \begin{tabular}{c c}
+            \includegraphics[width=0.44\textwidth]{../Q3/Qc/sk_cmat.pdf} & \includegraphics[width=0.44\textwidth]{../Q3/Qc/qp_cmat.pdf} \\
+            Scikit & CVXOPT (QP)
+        \end{tabular}
+    \end{center}
+
+    Classes 2 and 4 are most often misinterpreted as each other. Below, we plot 10 randomly chosen examples which are misclassified by Scikit and CVXOPT, with their predicted and original labels respectively
+
+    \begin{center}
+        \setlength\tabcolsep{1pt}
+        \begin{tabular}{c c c c c c c c c c c}
+            &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_qp_01_4.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_qp_01_9.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_qp_02_7.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_qp_04_6.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_qp_21_3.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_qp_24_2.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_qp_31_10.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_qp_34_8.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_qp_42_5.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_qp_43_1.png} \\ 
+            SK: &
+            {\color{red} 0} {\color{green} 1} &
+            {\color{red} 0} {\color{green} 1} &
+            {\color{red} 0} {\color{green} 2} &
+            {\color{red} 0} {\color{green} 4} &
+            {\color{red} 2} {\color{green} 1} &
+            {\color{red} 2} {\color{green} 4} &
+            {\color{red} 3} {\color{green} 1} &
+            {\color{red} 3} {\color{green} 4} &
+            {\color{red} 4} {\color{green} 2} &
+            {\color{red} 4} {\color{green} 3} \\
+            &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_sk_01_10.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_sk_02_8.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_sk_13_4.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_sk_23_7.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_sk_24_2.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_sk_24_5.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_sk_31_1.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_sk_31_3.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_sk_34_9.png} &
+            \includegraphics[width=0.08\textwidth]{../Q3/Qc/mc_sk_42_6.png} \\ 
+            QP: &
+            {\color{red} 0} {\color{green} 1} &
+            {\color{red} 0} {\color{green} 2} &
+            {\color{red} 1} {\color{green} 3} &
+            {\color{red} 2} {\color{green} 3} &
+            {\color{red} 2} {\color{green} 4} &
+            {\color{red} 2} {\color{green} 4} &
+            {\color{red} 3} {\color{green} 1} &
+            {\color{red} 3} {\color{green} 1} &
+            {\color{red} 3} {\color{green} 4} &
+            {\color{red} 4} {\color{green} 2} \\
+        \end{tabular}
+    \end{center}
+
+    These make sense. (Explain)
+
+    \item The plot is given on the following page. We see an increasing trend, where the best accuracy is given by the 'hardest' classifier i.e. for $C = 10$. This value also gives the best test set accuracy. 
+        
+        <comments here>
+
+        \begin{center}
+            \includegraphics[width=0.6\textwidth]{../Q3/Qd/acc.pdf}
+        \end{center}
+
+\end{enumerate}
 
 \end{document}
