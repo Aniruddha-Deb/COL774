@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[OT1]{fontenc}
+\usepackage[table,usenames,dvipsnames]{xcolor}
+\usepackage{array}
+\usepackage{varwidth}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\renewcommand*\familydefault{\sfdefault}
+
+\newtcolorbox{mybox}[3][]
+{
+  colframe = #2!25,
+  colback  = #2!10,
+  coltitle = #2!20!black,  
+  title    = {#3},
+  #1,
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+
+\title{\textbf{COL774 Assignment 2}}
+\author{Aniruddha Deb \\ \texttt{2020CS10869}}
+\date{October 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Decision Trees, Random Forests and Gradient Boosted Trees}
+
+\end{document}
