@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.15)  17 OCT 2022 22:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.15)  30 OCT 2022 23:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -264,10 +264,24 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box50
 \enit@count@id=\count270
 \enitdp@description=\count271
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/physics/physics.sty
+Package: physics 
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2020/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-03-06 L3 programming layer (loader) 
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count272
+\l__pdf_internal_box=\box51
+))
+Package: xparse 2020-03-06 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count273
+\g__xparse_grabber_int=\count274
+\l__xparse_m_args_int=\count275
+\l__xparse_v_nesting_int=\count276
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -285,7 +299,7 @@ Package: tcolorbox 2019/11/15 version 4.22 text color boxes
 \pgfutil@tempdima=\dimen169
 \pgfutil@tempdimb=\dimen170
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box51
+\pgfutil@abb=\box52
  (/usr/local/texlive/2020/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -312,14 +326,14 @@ Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@yd=\dimen180
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count272
-\c@pgf@countb=\count273
-\c@pgf@countc=\count274
-\c@pgf@countd=\count275
+\c@pgf@counta=\count277
+\c@pgf@countb=\count278
+\c@pgf@countc=\count279
+\c@pgf@countd=\count280
 \t@pgf@toka=\toks32
 \t@pgf@tokb=\toks33
 \t@pgf@tokc=\toks34
-\pgf@sys@id@count=\count276
+\pgf@sys@id@count=\count281
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -330,22 +344,22 @@ File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 ))) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count277
-\pgfsyssoftpath@bigbuffer@items=\count278
+\pgfsyssoftpath@smallbuffer@items=\count282
+\pgfsyssoftpath@bigbuffer@items=\count283
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+))
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
- (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+ (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen181
-\pgfmath@count=\count279
-\pgfmath@box=\box52
+\pgfmath@count=\count284
+\pgfmath@box=\box53
 \pgfmath@toks=\toks35
 \pgfmath@stack@operand=\toks36
 \pgfmath@stack@operation=\toks37
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count280
+\c@pgfmathroundto@lastzeros=\count285
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@picminx=\dimen182
@@ -372,10 +386,10 @@ File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@shorten@start@additional=\dimen199
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box53
-\pgf@hbox=\box54
-\pgf@layerbox@main=\box55
-\pgf@picture@serial@count=\count281
+\pgfpic=\box54
+\pgf@hbox=\box55
+\pgf@layerbox@main=\box56
+\pgf@picture@serial@count=\count286
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgflinewidth=\dimen256
@@ -384,26 +398,26 @@ File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@pt@x=\dimen257
 \pgf@pt@y=\dimen258
 \pgf@pt@temp=\dimen259
-) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgfarrowsep=\dimen260
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@max=\dimen261
-\pgf@sys@shading@range@num=\count282
-\pgf@shadingcount=\count283
+\pgf@sys@shading@range@num=\count287
+\pgf@shadingcount=\count288
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box56
+\pgfexternal@startupbox=\box57
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -414,7 +428,7 @@ File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box57
+\pgfnodeparttextbox=\box58
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
@@ -434,46 +448,42 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )) (/usr/local/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count284
+\etb@tempcnta=\count289
 )
-\tcb@titlebox=\box58
-\tcb@upperbox=\box59
-\tcb@lowerbox=\box60
-\tcb@phantombox=\box61
-\c@tcbbreakpart=\count285
-\c@tcblayer=\count286
-\tcolorbox@number=\count287
-\tcb@temp=\box62
+\tcb@titlebox=\box59
+\tcb@upperbox=\box60
+\tcb@lowerbox=\box61
+\tcb@phantombox=\box62
+\c@tcbbreakpart=\count290
+\c@tcblayer=\count291
+\tcolorbox@number=\count292
 \tcb@temp=\box63
 \tcb@temp=\box64
 \tcb@temp=\box65
+\tcb@temp=\box66
 \tcb@out=\write4
 \tcb@record@out=\write5
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 32.
- (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count288
-\l__pdf_internal_box=\box66
-) (./writeup.aux)
+Package hyperref Info: Option `colorlinks' set `true' on input line 33.
+ (./writeup.aux)
 \openout1 = `writeup.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -511,16 +521,16 @@ LaTeX Font Info:    ... okay on input line 38.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count289
+\scratchcounter=\count293
 \scratchdimen=\dimen264
 \scratchbox=\box67
-\nofMPsegments=\count290
-\nofMParguments=\count291
+\nofMPsegments=\count294
+\nofMParguments=\count295
 \everyMPshowfont=\toks40
-\MPscratchCnt=\count292
+\MPscratchCnt=\count296
 \MPscratchDim=\dimen265
-\MPnumerator=\count293
-\makeMPintoPDFobject=\count294
+\MPnumerator=\count297
+\makeMPintoPDFobject=\count298
 \everyMPtoPDFconversion=\toks41
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -529,7 +539,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \AtBeginShipoutBox=\box68
-Package hyperref Info: Link coloring ON on input line 38.
+Package hyperref Info: Link coloring ON on input line 39.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -537,73 +547,180 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count295
+\c@section@level=\count299
 )
-LaTeX Info: Redefining \ref on input line 38.
-LaTeX Info: Redefining \pageref on input line 38.
-LaTeX Info: Redefining \nameref on input line 38.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
  (./writeup.out) (./writeup.out)
 \@outlinefile=\write6
 \openout6 = `writeup.out'.
 
  ABD: EveryShipout initializing macros
-<../Q1/tree.pdf, id=19, 1134.63902pt x 560.0925pt>
+<../Q1/tree.pdf, id=27, 1134.63902pt x 560.0925pt>
 File: ../Q1/tree.pdf Graphic file (type pdf)
 <use ../Q1/tree.pdf>
-Package pdftex.def Info: ../Q1/tree.pdf  used on input line 56.
+Package pdftex.def Info: ../Q1/tree.pdf  used on input line 57.
 (pdftex.def)             Requested size: 459.75789pt x 226.94731pt.
  [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../Q1/tree.pdf>]
-<../Q1/tree_optimal.pdf, id=82, 1134.63902pt x 560.0925pt>
+<../Q1/tree_optimal.pdf, id=90, 1134.63902pt x 560.0925pt>
 File: ../Q1/tree_optimal.pdf Graphic file (type pdf)
 <use ../Q1/tree_optimal.pdf>
-Package pdftex.def Info: ../Q1/tree_optimal.pdf  used on input line 79.
+Package pdftex.def Info: ../Q1/tree_optimal.pdf  used on input line 80.
 (pdftex.def)             Requested size: 459.75789pt x 226.94731pt.
-<../Q1/impurity_vs_alpha.pdf, id=83, 505.62651pt x 387.47635pt>
+<../Q1/impurity_vs_alpha.pdf, id=91, 505.62651pt x 387.47635pt>
 File: ../Q1/impurity_vs_alpha.pdf Graphic file (type pdf)
 <use ../Q1/impurity_vs_alpha.pdf>
-Package pdftex.def Info: ../Q1/impurity_vs_alpha.pdf  used on input line 86.
+Package pdftex.def Info: ../Q1/impurity_vs_alpha.pdf  used on input line 87.
 (pdftex.def)             Requested size: 220.09479pt x 168.66318pt.
-<../Q1/nodes_vs_alpha.pdf, id=84, 426.46326pt x 426.54231pt>
+<../Q1/nodes_vs_alpha.pdf, id=92, 426.46326pt x 426.54231pt>
 File: ../Q1/nodes_vs_alpha.pdf Graphic file (type pdf)
 <use ../Q1/nodes_vs_alpha.pdf>
-Package pdftex.def Info: ../Q1/nodes_vs_alpha.pdf  used on input line 87.
+Package pdftex.def Info: ../Q1/nodes_vs_alpha.pdf  used on input line 88.
 (pdftex.def)             Requested size: 220.09479pt x 220.1371pt.
-<../Q1/accuracy_vs_alpha.pdf, id=85, 393.60803pt x 278.34865pt>
+<../Q1/accuracy_vs_alpha.pdf, id=93, 393.60803pt x 278.34865pt>
 File: ../Q1/accuracy_vs_alpha.pdf Graphic file (type pdf)
 <use ../Q1/accuracy_vs_alpha.pdf>
-Package pdftex.def Info: ../Q1/accuracy_vs_alpha.pdf  used on input line 95.
+Package pdftex.def Info: ../Q1/accuracy_vs_alpha.pdf  used on input line 96.
 (pdftex.def)             Requested size: 293.4647pt x 207.53351pt.
  [2 <../Q1/tree_optimal.pdf> <../Q1/impurity_vs_alpha.pdf> <../Q1/nodes_vs_alpha.pdf>]
-<../Q1/tree_best_pruned.pdf, id=196, 854.59277pt x 396.40097pt>
+<../Q1/tree_best_pruned.pdf, id=204, 854.59277pt x 396.40097pt>
 File: ../Q1/tree_best_pruned.pdf Graphic file (type pdf)
 <use ../Q1/tree_best_pruned.pdf>
-Package pdftex.def Info: ../Q1/tree_best_pruned.pdf  used on input line 110.
+Package pdftex.def Info: ../Q1/tree_best_pruned.pdf  used on input line 111.
 (pdftex.def)             Requested size: 459.75789pt x 213.26096pt.
  [3 <../Q1/accuracy_vs_alpha.pdf> <../Q1/tree_best_pruned.pdf>] [4] [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 193.
+<../Q2/single_layer_sigmoid/acc_time.pdf, id=326, 729.66351pt x 278.34865pt>
+File: ../Q2/single_layer_sigmoid/acc_time.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid/acc_time.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid/acc_time.pdf  used on input line 292.
+(pdftex.def)             Requested size: 440.18959pt x 167.91939pt.
+ [6]
+<../Q2/single_layer_sigmoid/cmat_5.pdf, id=337, 313.73347pt x 263.16693pt>
+File: ../Q2/single_layer_sigmoid/cmat_5.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid/cmat_5.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid/cmat_5.pdf  used on input line 298.
+(pdftex.def)             Requested size: 132.05986pt x 110.77832pt.
+<../Q2/single_layer_sigmoid/cmat_10.pdf, id=338, 313.73347pt x 263.16693pt>
+File: ../Q2/single_layer_sigmoid/cmat_10.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid/cmat_10.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid/cmat_10.pdf  used on input line 299.
+(pdftex.def)             Requested size: 132.05986pt x 110.77832pt.
+<../Q2/single_layer_sigmoid/cmat_15.pdf, id=339, 313.73347pt x 263.16693pt>
+File: ../Q2/single_layer_sigmoid/cmat_15.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid/cmat_15.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid/cmat_15.pdf  used on input line 300.
+(pdftex.def)             Requested size: 132.05986pt x 110.77832pt.
+<../Q2/single_layer_sigmoid/cmat_20.pdf, id=340, 313.73347pt x 263.16693pt>
+File: ../Q2/single_layer_sigmoid/cmat_20.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid/cmat_20.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid/cmat_20.pdf  used on input line 305.
+(pdftex.def)             Requested size: 132.05986pt x 110.77832pt.
+<../Q2/single_layer_sigmoid/cmat_25.pdf, id=341, 313.73347pt x 263.16693pt>
+File: ../Q2/single_layer_sigmoid/cmat_25.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid/cmat_25.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid/cmat_25.pdf  used on input line 306.
+(pdftex.def)             Requested size: 132.05986pt x 110.77832pt.
+<../Q2/single_layer_sigmoid_epochlr/acc_time.pdf, id=342, 729.66351pt x 278.34865pt>
+File: ../Q2/single_layer_sigmoid_epochlr/acc_time.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid_epochlr/acc_time.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid_epochlr/acc_time.pdf  used on input line 340.
+(pdftex.def)             Requested size: 440.18959pt x 167.91939pt.
+ [7 <../Q2/single_layer_sigmoid/acc_time.pdf> <../Q2/single_layer_sigmoid/cmat_5.pdf> <../Q2/single_layer_sigmoid/cmat_10.pdf> <../Q2/single_layer_sigmoid/cmat_15.pdf> <../Q2/single_layer_sigmoid/cmat_20.pdf> <../Q2/single_layer_sigmoid/cmat_25.pdf>]
+<../Q2/single_layer_sigmoid_epochlr/cmat_5.pdf, id=548, 313.73347pt x 263.16693pt>
+File: ../Q2/single_layer_sigmoid_epochlr/cmat_5.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid_epochlr/cmat_5.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid_epochlr/cmat_5.pdf  used on input line 345.
+(pdftex.def)             Requested size: 132.05986pt x 110.77832pt.
+<../Q2/single_layer_sigmoid_epochlr/cmat_10.pdf, id=549, 313.73347pt x 263.16693pt>
+File: ../Q2/single_layer_sigmoid_epochlr/cmat_10.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid_epochlr/cmat_10.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid_epochlr/cmat_10.pdf  used on input line 346.
+(pdftex.def)             Requested size: 132.05986pt x 110.77832pt.
+<../Q2/single_layer_sigmoid_epochlr/cmat_15.pdf, id=550, 313.73347pt x 263.16693pt>
+File: ../Q2/single_layer_sigmoid_epochlr/cmat_15.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid_epochlr/cmat_15.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid_epochlr/cmat_15.pdf  used on input line 347.
+(pdftex.def)             Requested size: 132.05986pt x 110.77832pt.
+<../Q2/single_layer_sigmoid_epochlr/cmat_20.pdf, id=551, 313.73347pt x 263.16693pt>
+File: ../Q2/single_layer_sigmoid_epochlr/cmat_20.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid_epochlr/cmat_20.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid_epochlr/cmat_20.pdf  used on input line 352.
+(pdftex.def)             Requested size: 132.05986pt x 110.77832pt.
+<../Q2/single_layer_sigmoid_epochlr/cmat_25.pdf, id=552, 313.73347pt x 263.16693pt>
+File: ../Q2/single_layer_sigmoid_epochlr/cmat_25.pdf Graphic file (type pdf)
+<use ../Q2/single_layer_sigmoid_epochlr/cmat_25.pdf>
+Package pdftex.def Info: ../Q2/single_layer_sigmoid_epochlr/cmat_25.pdf  used on input line 353.
+(pdftex.def)             Requested size: 132.05986pt x 110.77832pt.
+<../Q2/two_layer_relu_sigmoid/acc_time.pdf, id=553, 735.52257pt x 278.34865pt>
+File: ../Q2/two_layer_relu_sigmoid/acc_time.pdf Graphic file (type pdf)
+<use ../Q2/two_layer_relu_sigmoid/acc_time.pdf>
+Package pdftex.def Info: ../Q2/two_layer_relu_sigmoid/acc_time.pdf  used on input line 377.
+(pdftex.def)             Requested size: 440.18959pt x 166.58574pt.
+ [8 <../Q2/single_layer_sigmoid_epochlr/acc_time.pdf> <../Q2/single_layer_sigmoid_epochlr/cmat_5.pdf> <../Q2/single_layer_sigmoid_epochlr/cmat_10.pdf> <../Q2/single_layer_sigmoid_epochlr/cmat_15.pdf> <../Q2/single_layer_sigmoid_epochlr/cmat_20.pdf> <../Q2/single_layer_sigmoid_epochlr/cmat_25.pdf>]
+<../Q2/two_layer_relu_sigmoid/cmat_relu.pdf, id=758, 313.73347pt x 263.16693pt>
+File: ../Q2/two_layer_relu_sigmoid/cmat_relu.pdf Graphic file (type pdf)
+<use ../Q2/two_layer_relu_sigmoid/cmat_relu.pdf>
+Package pdftex.def Info: ../Q2/two_layer_relu_sigmoid/cmat_relu.pdf  used on input line 381.
+(pdftex.def)             Requested size: 195.63815pt x 164.10948pt.
+<../Q2/two_layer_relu_sigmoid/cmat_sigmoid.pdf, id=759, 313.73347pt x 263.16693pt>
+File: ../Q2/two_layer_relu_sigmoid/cmat_sigmoid.pdf Graphic file (type pdf)
+<use ../Q2/two_layer_relu_sigmoid/cmat_sigmoid.pdf>
+Package pdftex.def Info: ../Q2/two_layer_relu_sigmoid/cmat_sigmoid.pdf  used on input line 382.
+(pdftex.def)             Requested size: 195.63815pt x 164.10948pt.
+<../Q2/mult_layer_relu/acc_time.pdf, id=760, 729.66351pt x 278.34865pt>
+File: ../Q2/mult_layer_relu/acc_time.pdf Graphic file (type pdf)
+<use ../Q2/mult_layer_relu/acc_time.pdf>
+Package pdftex.def Info: ../Q2/mult_layer_relu/acc_time.pdf  used on input line 417.
+(pdftex.def)             Requested size: 440.18959pt x 167.91939pt.
+ [9 <../Q2/two_layer_relu_sigmoid/acc_time.pdf> <../Q2/two_layer_relu_sigmoid/cmat_relu.pdf> <../Q2/two_layer_relu_sigmoid/cmat_sigmoid.pdf>]
+<../Q2/mult_layer_relu/cmat_2.pdf, id=873, 313.73347pt x 263.16693pt>
+File: ../Q2/mult_layer_relu/cmat_2.pdf Graphic file (type pdf)
+<use ../Q2/mult_layer_relu/cmat_2.pdf>
+Package pdftex.def Info: ../Q2/mult_layer_relu/cmat_2.pdf  used on input line 422.
+(pdftex.def)             Requested size: 171.18898pt x 143.60182pt.
+<../Q2/mult_layer_relu/cmat_3.pdf, id=874, 313.73347pt x 263.16693pt>
+File: ../Q2/mult_layer_relu/cmat_3.pdf Graphic file (type pdf)
+<use ../Q2/mult_layer_relu/cmat_3.pdf>
+Package pdftex.def Info: ../Q2/mult_layer_relu/cmat_3.pdf  used on input line 423.
+(pdftex.def)             Requested size: 171.18898pt x 143.60182pt.
+<../Q2/mult_layer_relu/cmat_4.pdf, id=875, 313.73347pt x 263.16693pt>
+File: ../Q2/mult_layer_relu/cmat_4.pdf Graphic file (type pdf)
+<use ../Q2/mult_layer_relu/cmat_4.pdf>
+Package pdftex.def Info: ../Q2/mult_layer_relu/cmat_4.pdf  used on input line 425.
+(pdftex.def)             Requested size: 171.18898pt x 143.60182pt.
+<../Q2/mult_layer_relu/cmat_5.pdf, id=876, 313.73347pt x 263.16693pt>
+File: ../Q2/mult_layer_relu/cmat_5.pdf Graphic file (type pdf)
+<use ../Q2/mult_layer_relu/cmat_5.pdf>
+Package pdftex.def Info: ../Q2/mult_layer_relu/cmat_5.pdf  used on input line 426.
+(pdftex.def)             Requested size: 171.18898pt x 143.60182pt.
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 431.
+ [10 <../Q2/mult_layer_relu/acc_time.pdf> <../Q2/mult_layer_relu/cmat_2.pdf> <../Q2/mult_layer_relu/cmat_3.pdf> <../Q2/mult_layer_relu/cmat_4.pdf> <../Q2/mult_layer_relu/cmat_5.pdf>] [11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 479.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 479.
  (./writeup.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 193.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 193.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 479.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 479.
 Package rerunfilecheck Info: File `writeup.out' has not changed.
-(rerunfilecheck)             Checksum: 8059184675A597675F2BD120C5F88A59;205.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
+(rerunfilecheck)             Checksum: A62DB9901E034FD215657439F4A80AE2;297.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 479.
  ) 
 Here is how much of TeX's memory you used:
- 16951 strings out of 480608
- 315900 string characters out of 5903629
- 581183 words of memory out of 5000000
- 32471 multiletter control sequences out of 15000+600000
- 540283 words of font info for 52 fonts, out of 8000000 for 9000
+ 18079 strings out of 480608
+ 338314 string characters out of 5903629
+ 604599 words of memory out of 5000000
+ 33538 multiletter control sequences out of 15000+600000
+ 540811 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,8n,75p,966b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on writeup.pdf (5 pages, 137603 bytes).
+ 59i,12n,75p,966b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on writeup.pdf (11 pages, 438290 bytes).
 PDF statistics:
- 336 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 67 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1118 PDF objects out of 1200 (max. 8388607)
+ 336 compressed objects within 4 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

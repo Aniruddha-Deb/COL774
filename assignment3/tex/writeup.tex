@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{physics}
 \usepackage{graphicx}
 \usepackage{tcolorbox}
 \renewcommand*\familydefault{\sfdefault}
@@ -166,7 +167,12 @@
     \end{tabular}
     \end{center}
 
-    What do I see? Lot of gruntwork without any point % TODO give a good reason here
+    The imputed tree is marginally better (2-3 \%) compared to the tree which 
+    ignores missing values. Note that the comparision is not exact, as the size 
+    of the validation and test sets are also changing as a consequence (while 
+    ignoring missing values, we also ignore the ones in the test and validation 
+    set). As a result, the actual increase in accuracy post imputation will be 
+    much more than that without imputation.
     
     \item After implementing an XGBoost classifier and searching for parameters
     using GridSearchCV in the given parameter space, we obtain the following 
@@ -187,7 +193,287 @@
 
 \subsection{Dataset 2}
 
+NOTE: This dataset was not completely evaluated due to the large running time 
+of grid search on the dataset
+
 \begin{enumerate}[label=(\alph*)]
-    \item blah
+    \item Fitting a decision tree on the entire dataset gave us the following 
+        accuracies:
+    \begin{enumerate}[label=(\roman*)]
+        \item \textbf{Training set:} 100 \%
+        \item \textbf{Validation set:} 58.49 \%
+        \item \textbf{Test set:} 57.74 \%
+    \end{enumerate}
+
+    \item Grid search was run on the following parameter space:
+    \begin{enumerate}[label=(\roman*)]
+        \item \texttt{max\_depth}: $\{10, 15, 20, 25, 30\}$
+        \item \texttt{min\_samples\_split}: $\{2,3,4\}$
+        \item \texttt{min\_samples\_leaf}: $\{1,2,3\}$
+    \end{enumerate}
+
+    The best parameters were:
+    \begin{enumerate}[label=(\roman*)]
+        \item \texttt{max\_depth}: 30
+        \item \texttt{min\_samples\_split}: 2
+        \item \texttt{min\_samples\_leaf}: 1
+    \end{enumerate}
+
+    The accuracies for these parameters are:
+    \begin{enumerate}[label=(\roman*)]
+        \item \textbf{Training set:} 63.17 \%
+        \item \textbf{Validation set:} 44.30 \%
+        \item \textbf{Test set:} 44.01 \%
+    \end{enumerate}
+
 \end{enumerate}
+
+The kernel timed out after this point, which is why no more statistics were 
+obtained.
+
+\pagebreak
+
+\section{Neural Network}
+
+\begin{enumerate}[label=(\alph*)]
+    \item The neural network was implemented in Numpy, in a purely functional 
+    manner (so it can support any activation, loss and learning rate function 
+    passed to it). Forward propagation is given by the following equations:
+    \begin{align*}
+        z_i &= l_{i-1} \times w_i + b_i \\
+        l_i &= \text{act}(z_i)
+    \end{align*}
+    where $l_i$ is the output of the $i$th layer, $z_i$ is the linear output 
+    of the perceptrons and $\text{act}$ is the activation function. Note that we 
+    use $\times$ to denote matrix multiplication and $\odot$ to denote Hadamard
+    (elementwise) multiplication.
+
+    Backward propagation is given by the following equations:
+    \begin{align*}
+        \pdv{J}{l_L} &= \text{loss'}(\theta) \\
+        \\
+        \pdv{J}{w_i} &= \pdv{J}{l_i} \pdv{l_i}{z_i} \pdv{z_i}{w_i} \\
+                     &= l_{i-1}^T \times \left( \pdv{J}{l_i} \odot \text{act'}(z_i) \right) \\
+        \\
+        \pdv{J}{b_i} &= \pdv{J}{l_i} \pdv{l_i}{z_i} \pdv{z_i}{b_i} \\
+                     &= \pdv{J}{l_i} \odot \text{act'}(z_i) \\
+        \\
+        \pdv{J}{l_{i-1}} &= \pdv{J}{l_i} \pdv{l_i}{z_i} \pdv{z_i}{l_i} \\
+                     &= \left( \pdv{J}{l_i} \odot \text{act'}(z_i) \right) \times w_i^T 
+    \end{align*}
+
+    The matrix initialization was done according to \href{https://arxiv.org/pdf/1502.01852.pdf}{He et al.},
+    wherein the matrices $w_i$ and $b_i$ were initialized using a zero-mean 
+    normal distribution with variance $\sqrt{2/n_i}$, where $n_l$ is the number 
+    of neurons in the $i$th layer.
+
+    \item The network was trained with the stopping criteria that the \% change
+    in loss between two consecutive epochs, after training for atleast 50 epochs,
+    is less than $10^{-4}$. The network also has an upper bound of 300 epochs 
+    for training. 
+
+    The accuracies the trained model obtains on the test dataset, with varying 
+    hidden layer sizes, are:
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Neurons & Test Accuracy & Train Accuracy\\ 
+            \hline 
+            5  & 76.1 \% & 77.7 \% \\
+            10 & 75.8 \% & 77.1 \% \\
+            15 & 80.2 \% & 82.3 \% \\
+            20 & 71.9 \% & 73.9 \% \\
+            25 & 78.7 \% & 79.9 \% \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{../Q2/single_layer_sigmoid/acc_time.pdf}
+    \end{center}
+
+    The confusion matrices are:
+    \begin{center}
+        \begin{tabular}{c c c}
+            \includegraphics[width=0.27\textwidth]{../Q2/single_layer_sigmoid/cmat_5.pdf} &
+            \includegraphics[width=0.27\textwidth]{../Q2/single_layer_sigmoid/cmat_10.pdf} &
+            \includegraphics[width=0.27\textwidth]{../Q2/single_layer_sigmoid/cmat_15.pdf} \\
+            5 & 10 & 15 
+        \end{tabular}
+
+        \begin{tabular}{c c}
+            \includegraphics[width=0.27\textwidth]{../Q2/single_layer_sigmoid/cmat_20.pdf} &
+            \includegraphics[width=0.27\textwidth]{../Q2/single_layer_sigmoid/cmat_25.pdf} \\
+            20 & 25
+        \end{tabular}
+    \end{center}
+
+    We observe that models with fewer number of neurons tend to marginally 
+    underfit, and that there is a dip for models with an even number of neurons 
+    in the hidden layer (a zigzag pattern is observed). The training time, 
+    as expected, increases with an increase in the number of neurons. 
+
+    Also, note that 20 and 25 may not have completely learnt the model: they 
+    do not classify a label correctly (class 1 in the 20-neuron network and class 
+    6 in the 25-neuron network). They may give better results if we run the 
+    network for a longer period of time with a different convergence criterion.
+
+    \item The stopping condition would now change, as our step size (and consequently
+    change in loss) would decrease with increasing epochs. Changing the stopping
+    condition to $10^{-4}/\sqrt{e}$, where $e$ is the current epoch, gave the 
+    following results:
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Neurons & Test Accuracy & Train Accuracy \\ 
+            \hline 
+            5  & 56.2 \% & 56.4 \% \\
+            10 & 71.1 \% & 71.9 \% \\
+            15 & 78.5 \% & 79.6 \% \\
+            20 & 80.3 \% & 82.3 \% \\
+            25 & 80.4 \% & 82.5 \% \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+   \begin{center}
+        \includegraphics[width=0.9\textwidth]{../Q2/single_layer_sigmoid_epochlr/acc_time.pdf}
+    \end{center}
+
+    \begin{center}
+        \begin{tabular}{c c c}
+            \includegraphics[width=0.27\textwidth]{../Q2/single_layer_sigmoid_epochlr/cmat_5.pdf} &
+            \includegraphics[width=0.27\textwidth]{../Q2/single_layer_sigmoid_epochlr/cmat_10.pdf} &
+            \includegraphics[width=0.27\textwidth]{../Q2/single_layer_sigmoid_epochlr/cmat_15.pdf} \\
+            5 & 10 & 15 
+        \end{tabular}
+
+        \begin{tabular}{c c}
+            \includegraphics[width=0.27\textwidth]{../Q2/single_layer_sigmoid_epochlr/cmat_20.pdf} &
+            \includegraphics[width=0.27\textwidth]{../Q2/single_layer_sigmoid_epochlr/cmat_25.pdf} \\
+            20 & 25
+        \end{tabular}
+    \end{center}
+
+    The Epoch LR is a slow learner, and in none of the cases above did it converge
+    before the epoch limit (200) was hit. In terms of training time, it trained
+    faster than the previous network, even though the epoch limit was hit.
+
+    \item With a 2x100 network as described in the assignment, we obtain the 
+    following results:
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Network & Test Accuracy & Train Accuracy \\ 
+            \hline 
+            relu    & 78.8 \% & 82.5 \% \\
+            sigmoid & 83.4 \% & 85.3 \% \\
+            \hline
+        \end{tabular}
+    \end{center}
+    
+    \begin{center}
+        \includegraphics[width=0.9\textwidth]{../Q2/two_layer_relu_sigmoid/acc_time.pdf}
+    \end{center}
+    \begin{center}
+        \begin{tabular}{c c}
+            \includegraphics[width=0.4\textwidth]{../Q2/two_layer_relu_sigmoid/cmat_relu.pdf} &
+            \includegraphics[width=0.4\textwidth]{../Q2/two_layer_relu_sigmoid/cmat_sigmoid.pdf} \\
+            relu & sigmoid
+        \end{tabular}
+    \end{center}
+
+    When both were trained with a fixed number of epochs, the ReLU network performed
+    better. This implies that like before, the variable learning rate is not 
+    converging to the local minima quickly. The sigmoid performs better as it is
+    'easier' to learn than the relu: the derivatives do not go immediately to zero,
+    and as a result, the net gradient would be larger than the one obtained from
+    ReLU and this would allow it to take larger steps with the adaptive learning 
+    rate.
+
+    The results are better than the ones in 2(b): This is to be expected, as more
+    neurons allow the network to learn a larger number of hypotheses.
+
+    \item With increasing the number of layers, the accuracy increases until 
+    it saturates at 86\% for the test set. The training time graph also indicates
+    that the networks with 2 and 3 hidden layers were inadequately trained and 
+    hence underfit the data. 
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Layers & Test Accuracy & Train Accuracy \\ 
+            \hline 
+            2 & 73.5 \% & 75.2 \% \\
+            3 & 77.2 \% & 82.3 \% \\
+            4 & 86.8 \% & 96.1 \% \\
+            5 & 86.7 \% & 96.0 \% \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+   \begin{center}
+        \includegraphics[width=0.9\textwidth]{../Q2/mult_layer_relu/acc_time.pdf}
+    \end{center}
+
+    \begin{center}
+        \begin{tabular}{c c}
+            \includegraphics[width=0.35\textwidth]{../Q2/mult_layer_relu/cmat_2.pdf} &
+            \includegraphics[width=0.35\textwidth]{../Q2/mult_layer_relu/cmat_3.pdf} \\
+            2 & 3 \\
+            \includegraphics[width=0.35\textwidth]{../Q2/mult_layer_relu/cmat_4.pdf} &
+            \includegraphics[width=0.35\textwidth]{../Q2/mult_layer_relu/cmat_5.pdf} \\
+            4 & 5 
+        \end{tabular}
+    \end{center}
+
+    The \emph{best} network was found to be a 1x100 network with ReLU activations,
+    trained using a constant learning rate. This gave an accuracy of \textbf{88.29 \%}
+    on the test dataset and \textbf{93.61 \%} on the train dataset.
+
+    % \begin{center}
+    %     \includegraphics[width=0.5\textwidth]{../Q2/best/cmat_best.pdf}
+    % \end{center}
+    
+    \item Cross-Entropy loss for a batch is given by 
+    \begin{align*}
+        \mathcal{J}^b(\theta) = - \frac 1M \sum_{i=1}^M \sum_{j=1}^{10} 
+        y^{(i)}_j\log o^{(i)}_j + (1-y^{(i)}_j)\log (1-o^{(i)}_j)
+    \end{align*}
+
+    The derivative of this, with respect to $o$ is 
+    \begin{align*}
+        \pdv{\mathcal{J}^b(\theta)}{o}\big|_{ij} = - \frac 1M \left( 
+        \frac{y^{(i)}_j}{o^{(i)}_j} - \frac{1-y^{(i)}_j}{1-o^{(i)}_j} \right)
+    \end{align*}
+
+    After training the best network (1x100) for 397 s using cross-entropy loss, 
+    we obtained a training set accuracy of \textbf{95.74 \%} and a test set 
+    accuracy of \textbf{87.07 \%}. 
+
+    \item Using the Scikit-Learn MLPClassifier to train a network with the 
+    same hyperparameters as the best network we had, we obtain a training set accuracy 
+    of \textbf{90.36 \%} and a test set accuracy of \textbf{87.28 \%}. The training
+    occurs in 370.87 seconds and takes 200 iterations (the same as our classifier).
+
+    The library implementation does better than the model in 2(f), both of which 
+    use Cross Entropy loss as the minimization metric. It also trains slightly 
+    faster (27 seconds faster).
+
+\end{enumerate}
+
+\section{Appendix}
+
+The libraries used for this assignment were:
+\begin{enumerate}
+    \item numpy
+    \item pandas
+    \item matplotlib
+    \item scikit-learn
+    \item nltk
+    \item scipy
+    \item XGBoost
+\end{enumerate}
+
 \end{document}
