@@ -110,7 +110,7 @@ class NeuralNetwork:
         size = X.shape[0]
         prev_loss_diff = 1e9
         
-        for epoch in range(200):
+        for epoch in range(5):
             X_t, y_t = shuffle(X,y)
             train_loss = 0
             n_batches = X_t.shape[0]//self.M
@@ -345,20 +345,30 @@ if __name__ == "__main__":
     outpath = sys.argv[3]
     part = sys.argv[4]
 
-    if part == 'a':
-        pass
-    elif part == 'g':
-        with open(f"{outpath}/{part}.txt", "w") as logfile:
-            with redirect_stdout(logfile):
-                tic = time.perf_counter()
-                clf = MLPClassifier(solver='sgd').fit(X_train, y_train)
-                toc = time.perf_counter()
-                print("{toc-tic:.2f}")
-                clf.score(X_test, y_test)
-                clf.score(X_train, y_train)
-                print(f"{toc-tic:.2f}")
-    else:
-        with open(f"{outpath}/{part}.txt", "w") as logfile:
-            with redirect_stdout(logfile):
-                test_model_params(X_train, y_train, y_train_onehot, X_test, y_test, outpath, part, metadata[part])
+    params = {
+            'activation' : sigmoid,
+            'activation_dv' : sigmoid_dv,
+            'loss' : MSE_loss,
+            'loss_dv' : MSE_loss_dv,
+            'lr_fn' : constant_lr,
+            'layers' : [500,50]
+        }
+    test_model_params(X_train, y_train, y_train_onehot, X_test, y_test, outpath, "eval", { 'test': params })
 
+#    if part == 'a':
+#        pass
+#    elif part == 'g':
+#        with open(f"{outpath}/{part}.txt", "w") as logfile:
+#            with redirect_stdout(logfile):
+#                tic = time.perf_counter()
+#                clf = MLPClassifier(solver='sgd').fit(X_train, y_train)
+#                toc = time.perf_counter()
+#                print("{toc-tic:.2f}")
+#                clf.score(X_test, y_test)
+#                clf.score(X_train, y_train)
+#                print(f"{toc-tic:.2f}")
+#    else:
+#        with open(f"{outpath}/{part}.txt", "w") as logfile:
+#            with redirect_stdout(logfile):
+#                test_model_params(X_train, y_train, y_train_onehot, X_test, y_test, outpath, part, metadata[part])
+#
